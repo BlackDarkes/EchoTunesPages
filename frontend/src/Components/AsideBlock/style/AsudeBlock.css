@@ -1,0 +1,94 @@
+.asideBlock {
+  min-width: 200px;
+  max-width: 230px;
+  height: 100vh;
+  background-color: #14171A;
+  color: #ffffff;
+}
+.asideBlock__block .aside-navigation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  padding: 60px 23px 50px 40px;
+}
+.asideBlock__block .aside-navigation::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 90px);
+  width: 180px;
+  height: 1px;
+  background-color: #ADA8A8;
+}
+.asideBlock__block .aside-navigation__title {
+  font-size: 34px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.asideBlock__block .aside-navigation__button {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  font-size: 18px;
+  transition: 0.4s;
+}
+.asideBlock__block .aside-navigation__button:is(:hover, :focus) {
+  color: #ADA8A8;
+}
+.asideBlock__block .aside-navigation .active {
+  position: relative;
+  color: #ADA8A8;
+}
+.asideBlock__block .aside-navigation .active::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: -10px;
+  width: 2px;
+  height: 100%;
+  background-color: #ADA8A8;
+}
+.asideBlock__block .aside-playlist {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  padding: 50px 0 0 40px;
+}
+.asideBlock__block .aside-playlist__new {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  font-size: 18px;
+  background-color: #14171A;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.asideBlock__block .aside-playlist__new:is(:hover, :focus) {
+  color: #ADA8A8;
+}
+.asideBlock__block .aside-playlist .playlist-block {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(35px, 0.938rem + 1.563vw, 40px);
+  height: clamp(27vh, 8.063rem - 5.313vw, 30vh);
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+.asideBlock__block .aside-playlist .playlist-block::-webkit-scrollbar {
+  background-color: #ffffff;
+  width: 3px;
+}
+.asideBlock__block .aside-playlist .playlist-block::-webkit-scrollbar-thumb {
+  background-color: #555555;
+}
+.asideBlock__block .aside-playlist .playlist-block__playlists {
+  transition: 0.4s;
+}
+.asideBlock__block .aside-playlist .playlist-block__playlists:is(:hover, :focus) {
+  color: #ADA8A8;
+}/*# sourceMappingURL=AsudeBlock.css.map */

@@ -1,0 +1,9 @@
+.musicBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-height: 107px;
+  background-color: #14171A;
+  border-top: 7px solid #555555;
+}/*# sourceMappingURL=MusicBar.css.map */
