@@ -2,8 +2,8 @@
   min-width: 200px;
   max-width: 230px;
   height: 100vh;
-  background-color: #14171A;
-  color: #ffffff;
+  background-color: var(--dark);
+  color: var(--white);
 }
 .asideBlock__block .aside-navigation {
   position: relative;
@@ -19,10 +19,11 @@
   left: calc(50% - 90px);
   width: 180px;
   height: 1px;
-  background-color: #ADA8A8;
+  background-color: var(--light-gray);
 }
 .asideBlock__block .aside-navigation__title {
-  font-size: 34px;
+  font-size: var(--font-title);
+  font-weight: 600;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -32,15 +33,15 @@
   align-items: center;
   -moz-column-gap: 10px;
        column-gap: 10px;
-  font-size: 18px;
+  font-size: var(--font-text);
   transition: 0.4s;
 }
 .asideBlock__block .aside-navigation__button:is(:hover, :focus) {
-  color: #ADA8A8;
+  color: var(--light-gray);
 }
 .asideBlock__block .aside-navigation .active {
   position: relative;
-  color: #ADA8A8;
+  color: var(--light-gray);
 }
 .asideBlock__block .aside-navigation .active::before {
   content: "";
@@ -49,7 +50,7 @@
   left: -10px;
   width: 2px;
   height: 100%;
-  background-color: #ADA8A8;
+  background-color: var(--light-gray);
 }
 .asideBlock__block .aside-playlist {
   display: flex;
@@ -63,13 +64,13 @@
   -moz-column-gap: 10px;
        column-gap: 10px;
   font-size: 18px;
-  background-color: #14171A;
-  color: #ffffff;
+  background-color: var(--dark);
+  color: var(--white);
   cursor: pointer;
   transition: 0.4s;
 }
 .asideBlock__block .aside-playlist__new:is(:hover, :focus) {
-  color: #ADA8A8;
+  color: var(--light-gray);
 }
 .asideBlock__block .aside-playlist .playlist-block {
   display: flex;
@@ -80,15 +81,15 @@
   overflow-y: auto;
 }
 .asideBlock__block .aside-playlist .playlist-block::-webkit-scrollbar {
-  background-color: #ffffff;
+  background-color: var(--white);
   width: 3px;
 }
 .asideBlock__block .aside-playlist .playlist-block::-webkit-scrollbar-thumb {
-  background-color: #555555;
+  background-color: var(--gray);
 }
 .asideBlock__block .aside-playlist .playlist-block__playlists {
   transition: 0.4s;
 }
 .asideBlock__block .aside-playlist .playlist-block__playlists:is(:hover, :focus) {
-  color: #ADA8A8;
+  color: var(--light-gray);
 }/*# sourceMappingURL=AsudeBlock.css.map */

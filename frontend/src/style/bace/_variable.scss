@@ -1,0 +1,18 @@
+:root {
+    /*Colors*/
+    --white: #FFFFFF;
+    --black: #000000;
+    --gray: #555555;
+    --dark: #14171A;
+    --light-gray: #ADA8A8;
+    --up-linear-gradient: #141124;
+    --down-linear-gradient: #07135F;
+
+    --linear-gradient: linear-gradient(to bottom right , var(--up-linear-gradient), var(--down-linear-gradient));
+
+
+
+    /*Font*/
+    --font-text: 18px;
+    --font-title: 34px;
+}

@@ -4,6 +4,6 @@
   left: 0;
   width: 100%;
   min-height: 107px;
-  background-color: #14171A;
+  background-color: var(--dark);
   border-top: 7px solid #555555;
 }/*# sourceMappingURL=MusicBar.css.map */

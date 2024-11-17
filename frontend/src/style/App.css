@@ -160,8 +160,23 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
+:root {
+  /*Colors*/
+  --white: #FFFFFF;
+  --black: #000000;
+  --gray: #555555;
+  --dark: #14171A;
+  --light-gray: #ADA8A8;
+  --up-linear-gradient: #141124;
+  --down-linear-gradient: #07135F;
+  --linear-gradient: linear-gradient(to bottom right , var(--up-linear-gradient), var(--down-linear-gradient));
+  /*Font*/
+  --font-text: 18px;
+  --font-title: 34px;
+}
+
 body {
-  background-image: linear-gradient(to bottom right, #141124, #07135F);
+  background-image: var(--linear-gradient);
   font-family: "Nunito Sans", serif;
   max-height: 100vh;
 }
@@ -176,10 +191,17 @@ body::-webkit-scrollbar {
 
 a {
   color: inherit;
+}
+a, a:hover {
   text-decoration: none;
 }
 
 button {
   padding: 0;
   border: 0;
+  background-color: transparent;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
 }/*# sourceMappingURL=App.css.map */

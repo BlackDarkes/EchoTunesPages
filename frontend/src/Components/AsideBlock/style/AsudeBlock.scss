@@ -2,17 +2,16 @@
     min-width: 200px;
     max-width: 230px;
     height: 100vh;
-    background-color: #14171A;
-    color: #ffffff;
+    background-color: var(--dark);
+    color: var(--white);
 
     &__block {
 
         .aside {
 
             &-navigation {
+                @include flex-vertical();
                 position: relative;
-                display: flex;
-                flex-direction: column;
                 row-gap: 50px;
                 padding: 60px 23px 50px 40px;
 
@@ -23,29 +22,29 @@
                     left: calc((100% / 2) - (180px / 2));
                     width: 180px;
                     height: 1px;
-                    background-color: #ADA8A8;
+                    background-color: var(--light-gray);
                 }
 
                 &__title {
-                    font-size: 34px;
+                    font-size: var(--font-title);
+                    font-weight: 600;
                     user-select: none;
                 }
     
                 &__button {
-                    display: flex;
-                    align-items: center;
+                    @include flex-center-vertical();
                     column-gap: 10px;
-                    font-size: 18px;
+                    font-size: var(--font-text);
                     transition: 0.4s;
     
                     &:is(:hover, :focus) {
-                        color: #ADA8A8;
+                        color: var(--light-gray);
                     }
                 }
     
                 .active {
                     position: relative;
-                    color: #ADA8A8;
+                    color: var(--light-gray);
     
                     &::before {
                         content: "";
@@ -54,54 +53,49 @@
                         left: -10px;
                         width: 2px;
                         height: 100%;
-                        background-color: #ADA8A8;
+                        background-color: var(--light-gray);
                     }
                 }
             }
 
             &-playlist {
-                display: flex;
-                flex-direction: column;
+                @include flex-vertical();
                 row-gap: 50px;
                 padding: 50px 0 0 40px;
 
                 &__new {
-                    display: flex;
-                    align-items: center;
+                    @include flex-center-vertical();
                     column-gap: 10px;
                     font-size: 18px;
-                    background-color: #14171A;
-                    color: #ffffff;
-                    cursor: pointer;
+                    color: var(--white);
                     transition: 0.4s;
 
                     &:is(:hover, :focus) {
-                        color: #ADA8A8;
+                        color: var(--light-gray);
                     }
                 }
 
                 .playlist-block {
-                    display: flex;
-                    flex-direction: column;
+                    @include flex-vertical();
                     row-gap: clamp(35px, 0.938rem + 1.563vw, 40px);
                     height: clamp(27vh, 8.063rem + -5.313vw, 30vh);
                     flex-shrink: 0;
                     overflow-y: auto;
 
                     &::-webkit-scrollbar {
-                        background-color: #ffffff;
+                        background-color: var(--white);
                         width: 3px;
                     }
 
                     &::-webkit-scrollbar-thumb {
-                        background-color: #555555;
+                        background-color: var(--gray);
                     }
 
                     &__playlists {
                         transition: 0.4s;
 
                         &:is(:hover, :focus) {
-                            color: #ADA8A8;
+                            color: var(--light-gray);
                         }
                     }
                 }

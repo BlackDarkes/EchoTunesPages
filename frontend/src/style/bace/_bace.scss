@@ -1,5 +1,5 @@
 body {
-    background-image: linear-gradient(to bottom right , #141124, #07135F);
+    background-image: var(--linear-gradient);
     font-family: "Nunito Sans", serif;
     max-height: 100vh;
 
@@ -13,12 +13,6 @@ body {
     width: 100vw;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+a {@include re-style-link();}
 
-button {
-    padding: 0;
-    border: 0;
-}
+button {@include re-style-button();}

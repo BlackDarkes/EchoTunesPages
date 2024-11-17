@@ -1,0 +1,30 @@
+@mixin fluid-text($min: 16, $max: 34) {
+    font-size: clamp(#{$min}px, #{$max / 1920 * 100}vw, #{$max}px);
+}
+
+@mixin re-style-link() {
+    color: inherit;
+    
+    &,
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+@mixin re-style-button() {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    user-select: none;
+    cursor: pointer;
+}
+
+@mixin flex-center-vertical() {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-vertical() {
+    display: flex;
+    flex-direction: column;
+}
