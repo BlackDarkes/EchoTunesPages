@@ -3,6 +3,8 @@ import "./style/MusicBar.css";
 
 const MusicBar = () => {
     const [play, setPlay] = useState(true);
+    const [value, setValue] = useState(1);
+    const [valueSound, setValueSound] = useState(50);
 
     const playMusic = (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -17,11 +19,42 @@ const MusicBar = () => {
         </svg>
     );
 
+    const maxSound = (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.8916 4.10834C17.4539 5.67107 18.3315 7.7903 18.3315 10C18.3315 12.2097 17.4539 14.3289 15.8916 15.8917M12.95 7.05C13.7311 7.83137 14.1699 8.89099 14.1699 9.99584C14.1699 11.1007 13.7311 12.1603 12.95 12.9417M9.16663 4.16667L4.99996 7.5H1.66663V12.5H4.99996L9.16663 15.8333V4.16667Z" stroke="#ADA8A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    );
+
+    const middleSound = (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.95 7.05002C13.7311 7.83139 14.1699 8.891 14.1699 9.99585C14.1699 11.1007 13.7311 12.1603 12.95 12.9417M9.16663 4.16669L4.99996 7.50002H1.66663V12.5H4.99996L9.16663 15.8334V4.16669Z" stroke="#ADA8A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    );
+
+    const lowSound = (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9.16663 4.16669L4.99996 7.50002H1.66663V12.5H4.99996L9.16663 15.8334V4.16669Z" stroke="#ADA8A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+    );
+
+    const notSound = (
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clipPath="url(#clip0_132_436)">
+            <path d="M19.1666 7.50002L14.1666 12.5M14.1666 7.50002L19.1666 12.5M9.16663 4.16669L4.99996 7.50002H1.66663V12.5H4.99996L9.16663 15.8334V4.16669Z" stroke="#ADA8A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </g>
+            <defs>
+            <clipPath id="clip0_132_436">
+            <rect width="20" height="20" fill="white"/>
+            </clipPath>
+            </defs>
+        </svg>
+    );
+
     return (
         <section className="musicBar">
+            <input style={{cursor: "pointer"}} type="range" className="musicBar__progress" name="" id="" min={1} max={100} value={value} onChange={(event) => setValue(event.target.value)}/>
             <div className="musicBar__block">
                 <div className="bar">
-                    <input type="range" name="" id="" min={1} max={100}/>
                     <div className="bar-info">
                         <p className="bar-info__time"><span className="start-time">0:00</span> / <span className="full-time">3:30</span></p>
                         <p className="bar-info__name"><span className="name-music">Назание трэка</span> / <span className="author-music">Автор</span></p>
@@ -33,15 +66,15 @@ const MusicBar = () => {
                             </svg>
                         </button>
                         <div className="navigation">
-                            <button type="button" className="navigation__previous">
+                            <button type="button" className="navigation__previous navigation__button">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M4.16656 15.8333V4.16665M15.8332 16.6666L7.4999 9.99998L15.8332 3.33331V16.6666Z" stroke="#ADA8A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                             </button>
-                            <button type="button" className="navigation__play" onClick={() => setPlay(!play)}>
+                            <button type="button" className="navigation__play navigation__button" onClick={() => setPlay(!play)}>
                                 {play ? playMusic : stopMusic}
                             </button>
-                            <button type="button" className="navigation__next">
+                            <button type="button" className="navigation__next navigation__button">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M15.8332 4.16665V15.8333M4.16656 3.33331L12.4999 9.99998L4.16656 16.6666V3.33331Z" stroke="#ADA8A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
@@ -74,12 +107,13 @@ const MusicBar = () => {
                             </svg>
                         </button>
                         <div className="sound">
-                            <button type="button" className="sount__image">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M15.8916 4.10834C17.4539 5.67107 18.3315 7.7903 18.3315 10C18.3315 12.2097 17.4539 14.3289 15.8916 15.8917M12.95 7.05C13.7311 7.83137 14.1699 8.89099 14.1699 9.99584C14.1699 11.1007 13.7311 12.1603 12.95 12.9417M9.16663 4.16667L4.99996 7.5H1.66663V12.5H4.99996L9.16663 15.8333V4.16667Z" stroke="#ADA8A8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                </svg>
+                            <button type="button" className="sound__image" onClick={() => setValueSound(-1)}>
+                                {valueSound === -1 ? notSound : ""}
+                                {valueSound === "0" ? lowSound : ""}
+                                {valueSound >= 1 && valueSound <= 99 ? middleSound : ""}
+                                {valueSound === "100" ? maxSound : ""}
                             </button>
-                            <input type="range" name="" id="" min={1} max={100}/>
+                            <input className="sound__progress" style={{cursor: "pointer"}} type="range" name="" id="" value={valueSound} min={0} max={100} onChange={(event) => setValueSound(event.target.value)}/>
                         </div>
                     </div>
                 </div>

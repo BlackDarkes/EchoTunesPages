@@ -1,0 +1,19 @@
+.echoTunes {
+  display: flex;
+  max-height: 100vh;
+}
+.echoTunes__blocks {
+  display: flex;
+  flex-direction: column;
+  row-gap: 80px;
+  padding: 60px 130px 147px;
+  width: 88%;
+  min-width: 430px;
+}
+.echoTunes__blocks .header-block {
+  display: flex;
+  justify-content: space-between;
+}
+.echoTunes__blocks .musics {
+  height: 100%;
+}/*# sourceMappingURL=EchoTunes.css.map */

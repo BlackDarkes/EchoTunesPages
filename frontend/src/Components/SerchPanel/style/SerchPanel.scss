@@ -1,0 +1,44 @@
+@import "../../../style/App.scss";
+
+.serchBar {
+    width: 80%;
+    min-width: 650px;
+    max-width: 800px;
+
+    &__block {
+        .serch {
+            &-block {
+                display: flex;
+
+                &__input {
+                    padding: 7px 24px;
+                    width: 93%;
+                    height: 40px;
+                    border-radius: 10px 0 0 10px;
+                    border: 0;
+                    color: var(--black);
+                    font-size: 18px;
+                    
+                    &,
+                    &:focus {
+                        outline: 0;
+                    }
+
+                    &::placeholder {
+                        color: var(--black);
+                    }
+                }
+
+                &__button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 50px;
+                    background-color: var(--light-gray);
+                    border-radius: 0 10px 10px 0;
+                }
+            }
+
+        }
+    }
+}

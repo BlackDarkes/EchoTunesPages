@@ -1,0 +1,22 @@
+.echoTunes {
+    display: flex;
+    max-height: 100vh;
+
+    &__blocks {
+        display: flex;
+        flex-direction: column;
+        row-gap: 80px;
+        padding: 60px 130px 147px;
+        width: 88%;
+        min-width: 430px;
+        
+        .header-block {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .musics {
+            height: 100%;
+        }
+    }
+}

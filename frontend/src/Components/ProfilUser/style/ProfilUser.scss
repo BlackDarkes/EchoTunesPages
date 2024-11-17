@@ -1,0 +1,35 @@
+@import "../../../style/App.scss";
+
+.profilUser {
+    &__block {
+        .profil {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: clamp(40px, 1.161rem + 3.571vw, 70px);
+            height: clamp(40px, 1.161rem + 3.571vw, 70px);
+            background-color: var(--white);
+            border-radius: 50%;
+
+            &__button {
+                padding: 5px;
+            }
+
+            &__image {
+                @media (max-width: 1280px) {
+                    & {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+
+                @media (max-width: 837px) {
+                    & {
+                        width: 23px;
+                        height: 23px;
+                    }
+                }
+            }
+        }
+    }
+}
