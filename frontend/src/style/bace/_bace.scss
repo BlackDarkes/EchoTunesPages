@@ -16,3 +16,7 @@ body {
 a {@include re-style-link();}
 
 button {@include re-style-button();}
+
+p {
+    font-weight: 200;
+}

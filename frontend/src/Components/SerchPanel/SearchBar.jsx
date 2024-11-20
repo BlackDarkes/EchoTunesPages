@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./style/SerchPanel.css";
 
 const SerchBar = () => {
-    const [value, setValue] = useState("")
+    const [value, setValue] = useState("");
 
     return (
         <section className="serchBar">

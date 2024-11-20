@@ -43,6 +43,11 @@
                 &__randomMusic {
                     @include flex-center-vertical();
                     color: inherit;
+                    transition: 0.4s;
+
+                    &:hover {
+                        color: var(--white);
+                    }
 
                     @media (max-width: 1280px) {
                         & {
@@ -60,12 +65,22 @@
                     &__button {
                         @include flex-center-vertical();
                         color: inherit;
+                        transition: 0.4s;
+
+                        &:hover {
+                            color: var(--white)
+                        }
                     }
                 }
 
                 &__repeatMusic {
                     @include flex-center-vertical();
                     color: inherit;
+                    transition: 0.4s;
+
+                    &:hover {
+                        color: var(--white);
+                    }
 
                     @media (max-width: 1280px) {
                         & {
@@ -81,8 +96,12 @@
                 color: var(--light-gray);
 
                 &__addPlaylist {
-                    @include flex-center-vertical();
                     color: inherit;
+                    transition: 0.4s;
+
+                    &:hover {
+                        color: var(--white);
+                    } 
                 }
 
                 .sound {
@@ -94,11 +113,15 @@
                     &__image {
                         @include flex-center-vertical();
                         color: inherit;
+                        transition: 0.4s;
+
+                        &:hover {
+                            color: var(--white);
+                        }
                     }
 
                     &__progress {
                         height: 6px;
-                        background-color: red;
                     }
                 }
 

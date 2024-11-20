@@ -191,12 +191,14 @@ body::-webkit-scrollbar {
 
 a {
   color: inherit;
+  font-weight: 200;
 }
 a, a:hover {
   text-decoration: none;
 }
 
 button {
+  display: inline-flex;
   padding: 0;
   border: 0;
   background-color: transparent;
@@ -204,6 +206,10 @@ button {
      -moz-user-select: none;
           user-select: none;
   cursor: pointer;
+}
+
+p {
+  font-weight: 200;
 }
 
 .musicBar {
@@ -249,6 +255,10 @@ button {
   display: flex;
   align-items: center;
   color: inherit;
+  transition: 0.4s;
+}
+.musicBar__block .bar-nav__randomMusic:hover {
+  color: var(--white);
 }
 @media (max-width: 1280px) {
   .musicBar__block .bar-nav__randomMusic {
@@ -266,11 +276,19 @@ button {
   display: flex;
   align-items: center;
   color: inherit;
+  transition: 0.4s;
+}
+.musicBar__block .bar-nav .navigation__button:hover {
+  color: var(--white);
 }
 .musicBar__block .bar-nav__repeatMusic {
   display: flex;
   align-items: center;
   color: inherit;
+  transition: 0.4s;
+}
+.musicBar__block .bar-nav__repeatMusic:hover {
+  color: var(--white);
 }
 @media (max-width: 1280px) {
   .musicBar__block .bar-nav__repeatMusic {
@@ -284,9 +302,11 @@ button {
   color: var(--light-gray);
 }
 .musicBar__block .bar-sound__addPlaylist {
-  display: flex;
-  align-items: center;
   color: inherit;
+  transition: 0.4s;
+}
+.musicBar__block .bar-sound__addPlaylist:hover {
+  color: var(--white);
 }
 .musicBar__block .bar-sound .sound {
   display: flex;
@@ -299,10 +319,13 @@ button {
   display: flex;
   align-items: center;
   color: inherit;
+  transition: 0.4s;
+}
+.musicBar__block .bar-sound .sound__image:hover {
+  color: var(--white);
 }
 .musicBar__block .bar-sound .sound__progress {
   height: 6px;
-  background-color: red;
 }
 @media (max-width: 1280px) {
   .musicBar__block .bar-sound {

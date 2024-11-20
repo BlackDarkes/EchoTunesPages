@@ -1,20 +1,18 @@
 @import "../../../style/App.scss";
 
 .musicBlock {
-    max-width: 1250px;
-    width: 84%;
+    width: 88%;
     min-width: 390px;
     height: 100%;
 
     &__block {
-        padding-right: 20px;
 
         .music {
             display: flex;
             flex-direction: column;
             row-gap: 25px;
-            flex-shrink: 0;
-            width: 1250px;
+            padding-right: 40px;
+            max-width: 100%;
             height: 550px;
             overflow-y: auto;
 
@@ -25,6 +23,49 @@
 
             &::-webkit-scrollbar-thumb {
                 background-color: var(--gray);
+            }
+
+            &-block {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                min-width: 390px;
+                color: var(--white);
+
+                .block-info {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 15px;
+
+                    &__playPause {
+                        color: inherit;
+                    }
+
+                    .block-text {
+                        display: flex;
+                        flex-direction: column;
+                        font-size: 18px;
+
+                        &__author {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+                .block-button {
+                    display: flex;
+                    column-gap: 20px;
+
+                    .buttons {
+                        display: flex;
+                        column-gap: 40px;
+                    }
+
+                    &__button {
+                        color: inherit;
+                    }
+                }
             }
         }
     }

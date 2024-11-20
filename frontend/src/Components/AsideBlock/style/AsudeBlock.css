@@ -191,12 +191,14 @@ body::-webkit-scrollbar {
 
 a {
   color: inherit;
+  font-weight: 200;
 }
 a, a:hover {
   text-decoration: none;
 }
 
 button {
+  display: inline-flex;
   padding: 0;
   border: 0;
   background-color: transparent;
@@ -204,6 +206,10 @@ button {
      -moz-user-select: none;
           user-select: none;
   cursor: pointer;
+}
+
+p {
+  font-weight: 200;
 }
 
 .asideBlock {

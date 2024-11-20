@@ -191,12 +191,14 @@ body::-webkit-scrollbar {
 
 a {
   color: inherit;
+  font-weight: 200;
 }
 a, a:hover {
   text-decoration: none;
 }
 
 button {
+  display: inline-flex;
   padding: 0;
   border: 0;
   background-color: transparent;
@@ -206,21 +208,21 @@ button {
   cursor: pointer;
 }
 
+p {
+  font-weight: 200;
+}
+
 .musicBlock {
-  max-width: 1250px;
-  width: 84%;
+  width: 88%;
   min-width: 390px;
   height: 100%;
-}
-.musicBlock__block {
-  padding-right: 20px;
 }
 .musicBlock__block .music {
   display: flex;
   flex-direction: column;
   row-gap: 25px;
-  flex-shrink: 0;
-  width: 1250px;
+  padding-right: 40px;
+  max-width: 100%;
   height: 550px;
   overflow-y: auto;
 }
@@ -230,4 +232,42 @@ button {
 }
 .musicBlock__block .music::-webkit-scrollbar-thumb {
   background-color: var(--gray);
+}
+.musicBlock__block .music-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  min-width: 390px;
+  color: var(--white);
+}
+.musicBlock__block .music-block .block-info {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+}
+.musicBlock__block .music-block .block-info__playPause {
+  color: inherit;
+}
+.musicBlock__block .music-block .block-info .block-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 18px;
+}
+.musicBlock__block .music-block .block-info .block-text__author {
+  font-size: 14px;
+}
+.musicBlock__block .music-block .block-button {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+.musicBlock__block .music-block .block-button .buttons {
+  display: flex;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+}
+.musicBlock__block .music-block .block-button__button {
+  color: inherit;
 }/*# sourceMappingURL=MusicBlock.css.map */

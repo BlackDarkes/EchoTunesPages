@@ -1,0 +1,10 @@
+.button {
+    display: flex;
+    align-items: center;
+    color: #ADA8A8;
+    transition: 0.4s;
+}
+
+.button:hover {
+    color: #ffffff;
+}

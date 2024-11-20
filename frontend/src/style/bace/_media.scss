@@ -6,3 +6,9 @@ $tabs: 834px;
 $tabs-mob: 835px;
 $mobile: 560px;
 $mobile-mob: 561px;
+
+@mixin desctop() {
+    @media ($desctop) {
+        @content;
+    }
+}

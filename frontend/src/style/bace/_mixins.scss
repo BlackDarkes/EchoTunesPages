@@ -4,6 +4,7 @@
 
 @mixin re-style-link() {
     color: inherit;
+    font-weight: 200;
     
     &,
     &:hover {
@@ -12,6 +13,7 @@
 }
 
 @mixin re-style-button() {
+    display: inline-flex;
     padding: 0;
     border: 0;
     background-color: transparent;
