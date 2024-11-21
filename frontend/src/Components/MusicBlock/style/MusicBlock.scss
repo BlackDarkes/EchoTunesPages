@@ -40,6 +40,12 @@
 
                     &__playPause {
                         color: inherit;
+                        width: 25px;
+                        transition: 0.4s;
+
+                        &:hover {
+                            color: var(--light-gray);
+                        }
                     }
 
                     .block-text {
@@ -64,6 +70,11 @@
 
                     &__button {
                         color: inherit;
+                        transition: 0.4s;
+
+                        &:hover {
+                            color: var(--light-gray);
+                        }
                     }
                 }
             }

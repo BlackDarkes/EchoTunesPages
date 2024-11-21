@@ -249,6 +249,11 @@ p {
 }
 .musicBlock__block .music-block .block-info__playPause {
   color: inherit;
+  width: 25px;
+  transition: 0.4s;
+}
+.musicBlock__block .music-block .block-info__playPause:hover {
+  color: var(--light-gray);
 }
 .musicBlock__block .music-block .block-info .block-text {
   display: flex;
@@ -270,4 +275,8 @@ p {
 }
 .musicBlock__block .music-block .block-button__button {
   color: inherit;
+  transition: 0.4s;
+}
+.musicBlock__block .music-block .block-button__button:hover {
+  color: var(--light-gray);
 }/*# sourceMappingURL=MusicBlock.css.map */

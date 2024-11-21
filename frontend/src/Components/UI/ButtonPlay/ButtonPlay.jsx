@@ -1,10 +1,11 @@
-import classes from "./style/ButtonPlay.module.css";
+import { useState } from "react";
 
-const ButtonPlay = ({children}) => {
+const ButtonPlay = ({image1, image2, classe}) => {
+    const [play, setPlay] = useState(false)
 
     return ( 
-        <button type="button" className={classes}>
-            {children}
+        <button type="button" className={classe} onClick={() => setPlay(!play)}>
+            {play ? image1 : image2}
         </button>
     );
 }
