@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useRef, useEffect, useContext } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import "./style/MusicBar.css";
 import { musics } from "../../Music/musics";
 import PlayMusic from "../AssetsBlocks/MusicBar/NavigationMusic/MusicPlay"
@@ -19,7 +19,8 @@ const MusicBar = () => {
     const [play, setPlay] = useState(false);
     const [value, setValue] = useState("0");
     const [valueSound, setValueSound] = useState(0.05);
-    const [time, setTime] = useState(0)
+    const [time, setTime] = useState(0);
+    const [count, setCount] = useState(0);
     
     const togglePlayPause = () => {
         play ? audioRef.current.pause() : audioRef.current.play();
@@ -52,8 +53,22 @@ const MusicBar = () => {
     const formatTime = (time) => {
         const minutes = Math.floor(time / 60);
         const seconds = Math.floor(time % 60);
-        return`${minutes}:${seconds < 10 ? "0" : ""}${seconds}`
-    }
+        return`${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+    };
+
+    const nextMusic = () => {
+        if (count !== musics.length - 1) {
+            setCount(count + 1);
+            setPlay(!play)
+        };
+    };
+
+    const lastMusic = () => {
+        if (count !== 0) {
+            setCount(count - 1);
+            audioRef.current.play();
+        };
+    };
 
     return (
         <section className="musicBar">
@@ -69,20 +84,20 @@ const MusicBar = () => {
                 <div className="bar">
                     <div className="bar-info">
                         <p className="bar-info__time"><span className="start-time">{formatTime(value)}</span> / <span className="full-time">{formatTime(time)}</span></p>
-                        <p className="bar-info__name"><span className="name-music">{musics[2].name}</span> / <span className="author-music">{musics[2].author}</span></p>
+                        <p className="bar-info__name">{musics[count].name} / {musics[count].author}</p>
                     </div>
                     <div className="bar-nav">
                         <button type="button" className="bar-nav__randomMusic">
                             <RandomMusic/>
                         </button>
                         <div className="navigation">
-                            <button type="button" className="navigation__previous navigation__button">
+                            <button type="button" className="navigation__previous navigation__button" onClick={lastMusic}>
                                 <BackMusic/>
                             </button>
                             <button type="button" className="navigation__play navigation__button" onClick={togglePlayPause}>
                                 {play ? <StopMusic/> : <PlayMusic/>}
                             </button>
-                            <button type="button" className="navigation__next navigation__button">
+                            <button type="button" className="navigation__next navigation__button" onClick={nextMusic}>
                                 <NextMusic/>
                             </button>
                         </div>
@@ -112,7 +127,7 @@ const MusicBar = () => {
                                 max="1"
                                 onChange={handleVolumeChange}/>
                             <audio
-                                src={musics[2].music}
+                                src={musics[count].music}
                                 ref={audioRef}
                                 onTimeUpdate={updateCurrentTime}
                                 onLoadedMetadata={() => {

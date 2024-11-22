@@ -1,0 +1,9 @@
+@import "../../../../style/App.scss";
+
+.button {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    color: inherit;
+    font-weight: 200;
+}

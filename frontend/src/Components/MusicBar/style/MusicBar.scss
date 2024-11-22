@@ -31,6 +31,11 @@
                 row-gap: 10px;
 
                 &__name {
+                    width: 250px;
+                    height: 27px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                     font-size: 18px;
                 }
             }
