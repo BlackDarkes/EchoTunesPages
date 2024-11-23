@@ -6,7 +6,7 @@ import { musics } from "../../Music/musics";
 
 const MusicBlock = () => {
     const generateMusic = musics.map((elem, index) => {
-        return <Music key={musics[index].id} musicName={musics[index].name} author={musics[index].author} linkMusic={""}/>
+        return <Music key={musics[index].id} musicName={musics[index].name} author={musics[index].author} isPlay={false}/>
     })
 
     return (

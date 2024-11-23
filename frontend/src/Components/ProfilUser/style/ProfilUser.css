@@ -216,8 +216,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: clamp(40px, 1.161rem + 3.571vw, 70px);
-  height: clamp(40px, 1.161rem + 3.571vw, 70px);
+  width: 70px;
+  height: 70px;
   background-color: var(--white);
   border-radius: 50%;
 }
@@ -234,5 +234,17 @@ p {
   .profilUser__block .profil__image {
     width: 23px;
     height: 23px;
+  }
+}
+@media (max-width: 1280px) {
+  .profilUser__block .profil {
+    height: 55px;
+    width: 55px;
+  }
+}
+@media (max-width: 834px) {
+  .profilUser__block .profil {
+    width: 40px;
+    height: 40px;
   }
 }/*# sourceMappingURL=ProfilUser.css.map */

@@ -35,12 +35,13 @@ const MusicBar = () => {
             setCurrentTime(newTrack.currentTime);
         };
 
+        // Обработчик окончания трека
         const handleEnded = () => {
             nextTrack();
         };
 
         newTrack.addEventListener('timeupdate', updateTime);
-        newTrack.addEventListener('ended', handleEnded);
+        newTrack.addEventListener('ended', handleEnded); // Добавляем обработчик
 
         setTrack(newTrack);
 
@@ -48,7 +49,7 @@ const MusicBar = () => {
             newTrack.pause();
             newTrack.currentTime = 0;
             newTrack.removeEventListener('timeupdate', updateTime);
-            newTrack.removeEventListener('ended', handleEnded);
+            newTrack.removeEventListener('ended', handleEnded); // Убираем обработчик
         };
     }, [count]);
 
@@ -68,13 +69,13 @@ const MusicBar = () => {
     const nextTrack = () => {
         setCount((prevIndex) => (prevIndex + 1) % musics.length);
         setCurrentTime(0);
-        setPlay(true);
+        // Не меняем состояние play здесь
     };
 
     const lastTrack = () => {
         setCount((prevIndex) => (prevIndex - 1 + musics.length) % musics.length);
         setCurrentTime(0);
-        setPlay(true);
+        // Не меняем состояние play здесь
     };
 
     const togglePlayPause = () => {

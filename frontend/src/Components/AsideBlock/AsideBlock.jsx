@@ -5,9 +5,11 @@ import Button from "../Blocks/Button/Button";
 import Home from "../AssetsBlocks/AsideBlock/Home";
 import Labrary from "../AssetsBlocks/AsideBlock/Labrary";
 import New from "../AssetsBlocks/AsideBlock/New";
+import AsideBlockMobile from "../Mobile-blocks/AsideBlockMobile/AsideBlockMobile";
 
 const AsideBlock = ({home, library}) => {
     return ( 
+        <>
         <aside className="asideBlock">
             <div className="asideBlock__block">
                 <div className="aside">
@@ -25,18 +27,20 @@ const AsideBlock = ({home, library}) => {
                         <Button image={<New/>} text={"Новый"} classBlock={"aside-playlist__new"}/>
 
                         <section className="playlist-block">
-                            <Link className="playlist-block__playlists" to={""}>Созданный плейлист...</Link>
-                            <Link className="playlist-block__playlists" to={""}>Созданный плейлист...</Link>
-                            <Link className="playlist-block__playlists" to={""}>Созданный плейлист...</Link>
-                            <Link className="playlist-block__playlists" to={""}>Созданный плейлист...</Link>
-                            <Link className="playlist-block__playlists" to={""}>Созданный плейлист...</Link>
-                            <Link className="playlist-block__playlists" to={""}>Созданный плейлист...</Link>
-                            <Link className="playlist-block__playlists" to={""}>Созданный плейлист...</Link>
+                            <Link className="playlist-block__playlists" to={""}><p className="playlist-block__text">Созданный плейлист...</p></Link>
+                            <Link className="playlist-block__playlists" to={""}><p className="playlist-block__text">Созданный плейлист...</p></Link>
+                            <Link className="playlist-block__playlists" to={""}><p className="playlist-block__text">Созданный плейлист...</p></Link>
+                            <Link className="playlist-block__playlists" to={""}><p className="playlist-block__text">Созданный плейлист...</p></Link>
+                            <Link className="playlist-block__playlists" to={""}><p className="playlist-block__text">Созданный плейлист...</p></Link>
+                            <Link className="playlist-block__playlists" to={""}><p className="playlist-block__text">Созданный плейлист...</p></Link>
+                            <Link className="playlist-block__playlists" to={""}><p className="playlist-block__text">Созданный плейлист...</p></Link>
                         </section>
                     </div>
                 </div>
             </div>
         </aside>
+        <AsideBlockMobile home="mobile__home active mobile__button" library="mobile__library mobile__button"/>
+        </>
     );
 }
  

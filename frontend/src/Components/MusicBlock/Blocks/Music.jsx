@@ -4,8 +4,9 @@ import RenameMusic from "../../AssetsBlocks/MusicBlock/RenameMusic";
 import DeleteMusic from "../../AssetsBlocks/MusicBlock/DeleteMusic";
 import PlayMusic from "../../AssetsBlocks/MusicBar/NavigationMusic/MusicPlay";
 import StopMusic from "../../AssetsBlocks/MusicBar/NavigationMusic/StopMusic";
+import ThreePoints from "../../AssetsBlocks/MusicBlock/ThreePoints";
 
-const Music = ({musicName, author, linkMusic}) => {
+const Music = ({musicName, author, isPlay}) => {
     const [play, setPlay] = useState(false)
 
     return (
@@ -26,7 +27,8 @@ const Music = ({musicName, author, linkMusic}) => {
                     <button type="button" className="block-button__rename block-button__button"><RenameMusic/></button>
                     <button type="button" className="block-button__delete block-button__button"><DeleteMusic/></button>
                 </div>
-                <p className="block-time"><span>0:00</span>/<><span>3:30</span></></p>
+                <p className="block-time">0:00/3:30</p>
+                <button type="button" className="block-button__3points"><ThreePoints/></button>
             </div>
         </section>
     );

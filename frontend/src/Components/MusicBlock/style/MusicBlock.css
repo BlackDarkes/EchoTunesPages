@@ -213,8 +213,10 @@ p {
 }
 
 .musicBlock {
-  width: 88%;
-  min-width: 390px;
+  width: 100%;
+  height: 100%;
+}
+.musicBlock__block {
   height: 100%;
 }
 .musicBlock__block .music {
@@ -223,7 +225,7 @@ p {
   row-gap: 25px;
   padding-right: 40px;
   max-width: 100%;
-  height: 550px;
+  height: 100%;
   overflow-y: auto;
 }
 .musicBlock__block .music::-webkit-scrollbar {
@@ -237,8 +239,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  min-width: 390px;
+  height: 48px;
   color: var(--white);
 }
 .musicBlock__block .music-block .block-info {
@@ -255,6 +256,11 @@ p {
 .musicBlock__block .music-block .block-info__playPause:hover {
   color: var(--light-gray);
 }
+@media (max-width: 834px) {
+  .musicBlock__block .music-block .block-info__playPause {
+    display: none;
+  }
+}
 .musicBlock__block .music-block .block-info .block-text {
   display: flex;
   flex-direction: column;
@@ -263,8 +269,14 @@ p {
 .musicBlock__block .music-block .block-info .block-text__author {
   font-size: 14px;
 }
+@media (max-width: 834px) {
+  .musicBlock__block .music-block .block-info .block-text {
+    font-size: 14px;
+  }
+}
 .musicBlock__block .music-block .block-button {
   display: flex;
+  align-items: center;
   -moz-column-gap: 20px;
        column-gap: 20px;
 }
@@ -273,10 +285,35 @@ p {
   -moz-column-gap: 40px;
        column-gap: 40px;
 }
+@media (max-width: 834px) {
+  .musicBlock__block .music-block .block-button .buttons {
+    display: none;
+  }
+}
 .musicBlock__block .music-block .block-button__button {
   color: inherit;
   transition: 0.4s;
 }
 .musicBlock__block .music-block .block-button__button:hover {
   color: var(--light-gray);
+}
+@media (max-width: 600px) {
+  .musicBlock__block .music-block .block-button .block-time {
+    display: none;
+  }
+}
+.musicBlock__block .music-block .block-button__3points {
+  display: none;
+  color: var(--white);
+}
+@media (max-width: 834px) {
+  .musicBlock__block .music-block .block-button__3points {
+    display: flex;
+    align-items: center;
+  }
+}
+@media (max-width: 600px) {
+  .musicBlock__block .music {
+    padding-right: 10px;
+  }
 }/*# sourceMappingURL=MusicBlock.css.map */

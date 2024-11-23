@@ -245,4 +245,9 @@ p {
   width: 50px;
   background-color: var(--light-gray);
   border-radius: 0 10px 10px 0;
+}
+@media (max-width: 1280px) {
+  .serchBar {
+    display: none;
+  }
 }/*# sourceMappingURL=SerchPanel.css.map */

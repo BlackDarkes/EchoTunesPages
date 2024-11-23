@@ -1,0 +1,38 @@
+@import "../../../../style/App.scss";
+
+.headerMobile {
+    display: none;
+    padding-left: 60px;
+    color: var(--white);
+
+    &__burger {
+        position: fixed;
+        top: 47px;
+        left: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        color: var(--white);
+        
+        @include mobile() {
+            left: 20px
+        }
+    }
+
+    &__title {
+        @include fluid-text(24, 30);
+        font-weight: 600;
+    }
+
+    &-blocks {
+        display: flex;
+        column-gap: 50px;
+    }
+
+    @include laptop() {
+        display: flex;
+        justify-content: space-between;
+    }
+}

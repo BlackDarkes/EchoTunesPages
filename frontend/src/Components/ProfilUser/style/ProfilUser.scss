@@ -6,8 +6,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: clamp(40px, 1.161rem + 3.571vw, 70px);
-            height: clamp(40px, 1.161rem + 3.571vw, 70px);
+            width: 70px;
+            height: 70px;
             background-color: var(--white);
             border-radius: 50%;
 
@@ -29,6 +29,16 @@
                         height: 23px;
                     }
                 }
+            }
+
+            @include laptop() {
+                height: 55px;
+                width: 55px;
+            }
+
+            @include tabs() {
+                width: 40px;
+                height: 40px;
             }
         }
     }

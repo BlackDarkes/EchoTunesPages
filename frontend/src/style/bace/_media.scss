@@ -1,14 +1,70 @@
 $desctop: 1440px;
-$desctop-mob: 1441px;
+$desctop-above: 1441px;
 $laptop: 1280px;
-$laptop-mob: 1281px;
+$laptop-above: 1281px;
 $tabs: 834px;
-$tabs-mob: 835px;
-$mobile: 560px;
-$mobile-mob: 561px;
+$tabs-above: 835px;
+$mobile: 600px;
+$mobile-above: 601px;
 
-@mixin desctop() {
-    @media ($desctop) {
+@mixin hover() {
+    @media (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+
+    @media (hover: none) {
+        &:active {
+            @content;
+        }
+    }
+}
+
+@mixin desctop{
+    @media (max-width: $desctop) {
+        @content;
+    }
+}
+
+@mixin desctop-above{
+    @media (min-width: $desctop-above) {
+        @content;
+    }
+}
+
+@mixin laptop{
+    @media (max-width: $laptop) {
+        @content;
+    }
+}
+
+@mixin laptop-above{
+    @media (min-width: $laptop-above) {
+        @content;
+    }
+}
+
+@mixin tabs() {
+    @media (max-width: $tabs) {
+        @content;
+    }
+}
+
+@mixin tabs-above() {
+    @media (min-width: $tabs-above) {
+        @content;
+    }
+}
+
+@mixin mobile{
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin mobile-above{
+    @media (min-width: $mobile-mlobile) {
         @content;
     }
 }

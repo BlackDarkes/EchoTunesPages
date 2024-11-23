@@ -1,3 +1,5 @@
+@import "../../../style/App.scss";
+
 .echoTunes {
     display: flex;
     max-height: 100vh;
@@ -6,17 +8,31 @@
         display: flex;
         flex-direction: column;
         row-gap: 80px;
-        padding: 60px 130px 147px;
+        padding: 60px 130px 300px;
         width: 88%;
-        min-width: 430px;
         
         .header-block {
             display: flex;
             justify-content: space-between;
+
+            @include laptop() {
+                display: none;
+            }
         }
 
         .musics {
             height: 100%;
+        }
+
+        @include laptop() {
+            row-gap: 45px;
+            padding: 50px 40px 230px;
+            width: 100%;
+            height: 100vh;
+        }
+
+        @include mobile() {
+            padding: 50px 20px 230px;
         }
     }
 }

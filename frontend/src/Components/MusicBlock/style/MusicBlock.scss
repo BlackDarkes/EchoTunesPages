@@ -1,11 +1,11 @@
 @import "../../../style/App.scss";
 
 .musicBlock {
-    width: 88%;
-    min-width: 390px;
+    width: 100%;
     height: 100%;
 
     &__block {
+        height: 100%;
 
         .music {
             display: flex;
@@ -13,7 +13,7 @@
             row-gap: 25px;
             padding-right: 40px;
             max-width: 100%;
-            height: 550px;
+            height: 100%;
             overflow-y: auto;
 
             &::-webkit-scrollbar {
@@ -29,8 +29,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                width: 100%;
-                min-width: 390px;
+                height: 48px;
                 color: var(--white);
 
                 .block-info {
@@ -46,6 +45,10 @@
                         &:hover {
                             color: var(--light-gray);
                         }
+
+                        @include tabs() {
+                            display: none;
+                        }
                     }
 
                     .block-text {
@@ -56,16 +59,25 @@
                         &__author {
                             font-size: 14px;
                         }
+
+                        @include tabs() {
+                            font-size: 14px;
+                        }
                     }
                 }
 
                 .block-button {
                     display: flex;
+                    align-items: center;
                     column-gap: 20px;
 
                     .buttons {
                         display: flex;
                         column-gap: 40px;
+
+                        @include tabs() {
+                            display: none;
+                        }
                     }
 
                     &__button {
@@ -76,7 +88,27 @@
                             color: var(--light-gray);
                         }
                     }
+
+                    .block-time {
+                        @include mobile() {
+                            display: none;
+                        }
+                    }
+
+                    &__3points {
+                        display: none;
+                        color: var(--white);
+
+                        @include tabs() {
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
                 }
+            }
+
+            @include mobile() {
+                padding-right: 10px;
             }
         }
     }

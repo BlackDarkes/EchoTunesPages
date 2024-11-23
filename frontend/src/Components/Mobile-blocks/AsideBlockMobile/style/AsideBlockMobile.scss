@@ -1,0 +1,37 @@
+@import "../../../../style/App.scss";
+
+.mobile {
+    display: none;
+    padding: 130px 0 0 40px;
+    color: var(--white);
+
+    &__button {
+        display: flex;
+        align-items: center;
+    }
+
+    .active {
+        position: relative;
+        color: var(--light-gray);
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -5px;
+            width: 2px;
+            height: 100%;
+            background-color: var(--light-gray);
+        }
+    }
+
+    @include laptop() {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+
+    @include mobile() {
+        display: none;
+    }
+}

@@ -250,6 +250,22 @@ p {
   text-overflow: ellipsis;
   font-size: 18px;
 }
+@media (max-width: 1280px) {
+  .musicBar__block .bar-info__name {
+    font-size: 16px;
+  }
+}
+@media (max-width: 600px) {
+  .musicBar__block .bar-info__name {
+    width: 160px;
+    font-size: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .musicBar__block .bar-info {
+    font-size: 14px;
+  }
+}
 .musicBar__block .bar-nav {
   display: flex;
   -moz-column-gap: 70px;
@@ -277,6 +293,12 @@ p {
        column-gap: 50px;
   color: var(--light-gray);
 }
+@media (max-width: 600px) {
+  .musicBar__block .bar-nav .navigation__play {
+    width: 30px;
+    height: 30px;
+  }
+}
 .musicBar__block .bar-nav .navigation__button {
   display: flex;
   align-items: center;
@@ -285,6 +307,12 @@ p {
 }
 .musicBar__block .bar-nav .navigation__button:hover {
   color: var(--white);
+}
+@media (max-width: 600px) {
+  .musicBar__block .bar-nav .navigation {
+    -moz-column-gap: 35px;
+         column-gap: 35px;
+  }
 }
 .musicBar__block .bar-nav__repeatMusic {
   display: flex;
@@ -335,5 +363,15 @@ p {
 @media (max-width: 1280px) {
   .musicBar__block .bar-sound {
     display: none;
+  }
+}
+@media (max-width: 834px) {
+  .musicBar__block {
+    padding-inline: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .musicBar__block {
+    padding-inline: 20px;
   }
 }/*# sourceMappingURL=MusicBar.css.map */

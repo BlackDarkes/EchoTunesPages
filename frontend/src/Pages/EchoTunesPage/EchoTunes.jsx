@@ -1,4 +1,5 @@
 import AsideBlock from "../../Components/AsideBlock/AsideBlock";
+import HeaderMobile from "../../Components/Mobile-blocks/HeaderMobile/HeaderMobile";
 import MusicBar from "../../Components/MusicBar/MusicBar";
 import MusicBlock from "../../Components/MusicBlock/MusicBlock";
 import ProfilUser from "../../Components/ProfilUser/ProfilUser";
@@ -15,6 +16,7 @@ const EchoTunes = () => {
                     <SerchBar/>
                     <ProfilUser/>
                 </header>
+                <HeaderMobile/>
                 <main className="musics">
                     <MusicBlock/>
                 </main>

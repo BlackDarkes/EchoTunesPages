@@ -37,6 +37,19 @@
                     overflow: hidden;
                     text-overflow: ellipsis;
                     font-size: 18px;
+
+                    @include laptop() {
+                        font-size: 16px;
+                    }
+
+                    @include mobile() {
+                        width: 160px;
+                        font-size: 14px;
+                    }
+                }
+
+                @include mobile() {
+                    font-size: 14px;
                 }
             }
 
@@ -54,10 +67,8 @@
                         color: var(--white);
                     }
 
-                    @media (max-width: 1280px) {
-                        & {
-                            display: none;
-                        }
+                    @include laptop() {
+                        display: none;
                     }
                 }
 
@@ -67,6 +78,13 @@
                     column-gap: 50px;
                     color: var(--light-gray);
 
+                    &__play {
+                        @include mobile() {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+
                     &__button {
                         @include flex-center-vertical();
                         color: inherit;
@@ -75,6 +93,10 @@
                         &:hover {
                             color: var(--white)
                         }
+                    }
+
+                    @include mobile() {
+                        column-gap: 35px
                     }
                 }
 
@@ -86,11 +108,9 @@
                     &:hover {
                         color: var(--white);
                     }
-
-                    @media (max-width: 1280px) {
-                        & {
-                            display: none;
-                        }
+                    
+                    @include laptop() {
+                        display: none;
                     }
                 }
             }
@@ -130,12 +150,18 @@
                     }
                 }
 
-                @media (max-width: 1280px) {
-                    & {
-                        display: none;
-                    }
+                @include laptop() {
+                    display: none;
                 }
             }
+        }
+
+        @include tabs() {
+            padding-inline: 40px;
+        }
+
+        @include mobile() {
+            padding-inline: 20px;
         }
     }
 }
