@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import { useState, useRef, useEffect, useContext } from "react";
 import "./style/MusicBar.css";
@@ -15,59 +16,88 @@ import RepeatMusic from "../AssetsBlocks/MusicBar/NavigationMusic/ReapeatMusic";
 import AddPlaylist from "../AssetsBlocks/MusicBar/Sound/AddPlaylist";
 
 const MusicBar = () => {
-    const audioRef = useRef(null)
     const [play, setPlay] = useState(false);
-    const [value, setValue] = useState("0");
     const [valueSound, setValueSound] = useState(0.05);
-    const [time, setTime] = useState(0);
     const [count, setCount] = useState(0);
-    
-    const togglePlayPause = () => {
-        play ? audioRef.current.pause() : audioRef.current.play();
-        
-        setPlay(!play);
-    }
-
-    const handleVolumeChange = (event) => {
-        const newVolume = event.target.value;
-        setValueSound(newVolume);
-        audioRef.current.volume = newVolume;
-    }
-
-    const hendleTimeChange = (event) => {
-        const newTime = event.target.value;
-        audioRef.current.currentTime = newTime;
-        setValue(newTime);
-    }
-
-    const updateCurrentTime = () => {
-        setValue(audioRef.current.currentTime);
-    }
+    const [track, setTrack] = useState(new Audio(musics[count].music));
+    const [currentTime, setCurrentTime] = useState(0);
+    const [duration, setDuration] = useState(0);
 
     useEffect(() => {
-        if (audioRef.current) {
-          audioRef.current.volume = valueSound; 
+        const newTrack = new Audio(musics[count].music);
+        newTrack.volume = valueSound;
+
+        newTrack.onloadedmetadata = () => {
+            setDuration(newTrack.duration);
+        };
+
+        const updateTime = () => {
+            setCurrentTime(newTrack.currentTime);
+        };
+
+        const handleEnded = () => {
+            nextTrack();
+        };
+
+        newTrack.addEventListener('timeupdate', updateTime);
+        newTrack.addEventListener('ended', handleEnded);
+
+        setTrack(newTrack);
+
+        return () => {
+            newTrack.pause();
+            newTrack.currentTime = 0;
+            newTrack.removeEventListener('timeupdate', updateTime);
+            newTrack.removeEventListener('ended', handleEnded);
+        };
+    }, [count]);
+
+    useEffect(() => {
+        if (track) {
+            track.volume = valueSound;
+            if (play) {
+                track.play().catch(error => {
+                    console.error("Error playing the track:", error);
+                });
+            } else {
+                track.pause();
+            }
         }
-    }, [valueSound]);
+    }, [play, track, valueSound]);
+
+    const nextTrack = () => {
+        setCount((prevIndex) => (prevIndex + 1) % musics.length);
+        setCurrentTime(0);
+        setPlay(true);
+    };
+
+    const lastTrack = () => {
+        setCount((prevIndex) => (prevIndex - 1 + musics.length) % musics.length);
+        setCurrentTime(0);
+        setPlay(true);
+    };
+
+    const togglePlayPause = () => {
+        setPlay(prevPlay => !prevPlay);
+    };
+
+    const handleVolumeChange = (event) => {
+        const volume = parseFloat(event.target.value);
+        setValueSound(volume);
+    };
+
+    const handleTimeChange = (event) => {
+        const time = parseFloat(event.target.value);
+        setCurrentTime(time);
+        if (track) {
+            track.currentTime = time;
+        }
+    };
 
     const formatTime = (time) => {
         const minutes = Math.floor(time / 60);
         const seconds = Math.floor(time % 60);
-        return`${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
-    };
-
-    const nextMusic = () => {
-        if (count !== musics.length - 1) {
-            setCount(count + 1);
-            setPlay(!play)
-        };
-    };
-
-    const lastMusic = () => {
-        if (count !== 0) {
-            setCount(count - 1);
-            audioRef.current.play();
-        };
+        return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
     };
 
     return (
@@ -77,13 +107,13 @@ const MusicBar = () => {
                 className="musicBar__progress"
                 min="0"
                 step="0.05"
-                max={time}
-                value={value}
-                onChange={hendleTimeChange}/>
+                max={duration}
+                value={currentTime}
+                onChange={handleTimeChange}/>
             <div className="musicBar__block">
                 <div className="bar">
                     <div className="bar-info">
-                        <p className="bar-info__time"><span className="start-time">{formatTime(value)}</span> / <span className="full-time">{formatTime(time)}</span></p>
+                        <p className="bar-info__time"><span className="start-time">{formatTime(currentTime)}</span> / <span className="full-time">{formatTime(duration)}</span></p>
                         <p className="bar-info__name">{musics[count].name} / {musics[count].author}</p>
                     </div>
                     <div className="bar-nav">
@@ -91,13 +121,13 @@ const MusicBar = () => {
                             <RandomMusic/>
                         </button>
                         <div className="navigation">
-                            <button type="button" className="navigation__previous navigation__button" onClick={lastMusic}>
+                            <button type="button" className="navigation__previous navigation__button" onClick={lastTrack}>
                                 <BackMusic/>
                             </button>
                             <button type="button" className="navigation__play navigation__button" onClick={togglePlayPause}>
                                 {play ? <StopMusic/> : <PlayMusic/>}
                             </button>
-                            <button type="button" className="navigation__next navigation__button" onClick={nextMusic}>
+                            <button type="button" className="navigation__next navigation__button" onClick={nextTrack}>
                                 <NextMusic/>
                             </button>
                         </div>
@@ -114,9 +144,9 @@ const MusicBar = () => {
                                 valueSound >= 0.01 ? setValueSound(0) : setValueSound(0.03)
                             }}>
                                 {valueSound === 0 ? <NotSound/> : ""}
-                                {valueSound === "0" ? <LowSound/> : ""}
-                                {valueSound >= "0.01" && valueSound <= 0.99 ? <MiddleSound/> : ""}
-                                {valueSound === "1" ? <MaxSound/> : ""}
+                                {valueSound >= "0.01" && valueSound <= 0.14 ? <LowSound/> : ""}
+                                {valueSound >= "0.15" && valueSound <= 0.99 ? <MiddleSound/> : ""}
+                                {valueSound === 1 ? <MaxSound/> : ""}
                             </button>
                             <input className="sound__progress"
                                 style={{cursor: "pointer"}}
@@ -126,13 +156,6 @@ const MusicBar = () => {
                                 step="0.01"
                                 max="1"
                                 onChange={handleVolumeChange}/>
-                            <audio
-                                src={musics[count].music}
-                                ref={audioRef}
-                                onTimeUpdate={updateCurrentTime}
-                                onLoadedMetadata={() => {
-                                    setTime(audioRef.current.duration);
-                                }}></audio>
                         </div>
                     </div>
                 </div>

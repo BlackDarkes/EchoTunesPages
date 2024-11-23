@@ -1,14 +1,3 @@
-import callofduty from "./Hans Zimmer-Opening Titles.mp3"
-import iablokinasnegu from "./russian-doomer-chernikovskaia-khata-iabloki-na-snegu.mp3"
-import signal from "./tk from signal.mp3";
-import filmamoment from "./tk-from-film-a-moment.mp3"
-import fuyunohanashi from "./Fuyu_no_Hanashi.mp3"
-import unravel from "./TK from Ling tosite sigure-Unravel.mp3"
-import antigravity from "./Starset-Antigravity.mp3"
-import radiogagaqueen from "./queen-radio-ga-ga.mp3"
-import quenbee from "./Queen Bee-Mephisto.mp3"
-import empoweringyourself from "./Olivier_Deriviere_Empowering_Yourself.mp3"
-
 let count = 0;
 
 export const musics = [
@@ -16,60 +5,60 @@ export const musics = [
         id: count++,
         name: "Opening Titles",
         author: "Hans Zimmer",
-        music: callofduty,
+        music: require("./Hans Zimmer-Opening Titles.mp3"),
     },
     {
         id: count++,
         name: "iabloki-na-snegu",
         author: "chernikovskaia-khata",
-        music: iablokinasnegu,
+        music: require("./russian-doomer-chernikovskaia-khata-iabloki-na-snegu.mp3"),
     },
     {
         id: count++,
         name: "Signal",
         author: "TK from 凛として時雨",
-        music: signal,
+        music: require("./tk from signal.mp3"),
     },
     {
         id: count++,
         name: "Film A Moment",
         author: "TK from 凛として時雨",
-        music: filmamoment,
+        music: require("./tk-from-film-a-moment.mp3"),
     },
     {
         id: count++,
         name: "Fuyu no hanashi",
         author: "Given",
-        music: fuyunohanashi,
+        music: require("./Fuyu_no_Hanashi.mp3"),
     },
     {
         id: count++,
         name: "Unravel",
         author: "TK from 凛として時雨",
-        music: unravel,
+        music: require("./TK from Ling tosite sigure-Unravel.mp3"),
     },
     {
         id: count++,
         name: "Antigravity",
         author: "Starset",
-        music: antigravity,
+        music: require("./Starset-Antigravity.mp3"),
     },
     {
         id: count++,
         name: "Radio ga ga",
         author: "Queen",
-        music: radiogagaqueen,
+        music: require("./queen-radio-ga-ga.mp3"),
     },
     {
         id: count++,
         name: "Mephisto",
         author: "Quen bee",
-        music: quenbee,
+        music: require("./Queen Bee-Mephisto.mp3"),
     },
     {
         id: count++,
         name: "Empowering Yourself",
         author: "Olivier Deriviere",
-        music: empoweringyourself,
+        music: require("./Olivier_Deriviere_Empowering_Yourself.mp3"),
     },
 ]
