@@ -36,6 +36,12 @@
                     width: 50px;
                     background-color: var(--light-gray);
                     border-radius: 0 10px 10px 0;
+                    transition: 0.4s;
+
+                    @include hover() {
+                        background-color: var(--black);
+                        color: var(--light-gray);
+                    }
                 }
             }
 

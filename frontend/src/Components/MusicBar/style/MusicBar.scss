@@ -63,7 +63,7 @@
                     color: inherit;
                     transition: 0.4s;
 
-                    &:hover {
+                    @include hover() {
                         color: var(--white);
                     }
 
@@ -90,8 +90,8 @@
                         color: inherit;
                         transition: 0.4s;
 
-                        &:hover {
-                            color: var(--white)
+                        @include hover() {
+                            color: var(--white);
                         }
                     }
 
@@ -105,7 +105,7 @@
                     color: inherit;
                     transition: 0.4s;
 
-                    &:hover {
+                    @include hover() {
                         color: var(--white);
                     }
                     
@@ -124,9 +124,9 @@
                     color: inherit;
                     transition: 0.4s;
 
-                    &:hover {
+                    @include hover() {
                         color: var(--white);
-                    } 
+                    }
                 }
 
                 .sound {
@@ -140,7 +140,7 @@
                         color: inherit;
                         transition: 0.4s;
 
-                        &:hover {
+                        @include hover() {
                             color: var(--white);
                         }
                     }

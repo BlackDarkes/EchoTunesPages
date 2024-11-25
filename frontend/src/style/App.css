@@ -189,6 +189,14 @@ body::-webkit-scrollbar {
   width: 100vw;
 }
 
+input, textarea {
+  resize: none;
+  border: 0;
+}
+input:focus, textarea:focus {
+  outline: 0;
+}
+
 a {
   color: inherit;
   font-weight: 200;
@@ -210,4 +218,10 @@ button {
 
 p {
   font-weight: 200;
+}
+
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }/*# sourceMappingURL=App.css.map */

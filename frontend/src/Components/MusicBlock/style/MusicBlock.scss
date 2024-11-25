@@ -17,12 +17,12 @@
             overflow-y: auto;
 
             &::-webkit-scrollbar {
-                background-color: var(--white);
-                width: 5px;
+                background-color: var(--gray);
+                width: 3px;
             }
 
             &::-webkit-scrollbar-thumb {
-                background-color: var(--gray);
+                background-color: var(--white);
             }
 
             &-block {
@@ -42,8 +42,8 @@
                         width: 25px;
                         transition: 0.4s;
 
-                        &:hover {
-                            color: var(--light-gray);
+                        @include hover() {
+                            color: var(--light-gray)
                         }
 
                         @include tabs() {
@@ -84,7 +84,7 @@
                         color: inherit;
                         transition: 0.4s;
 
-                        &:hover {
+                        @include hover() {
                             color: var(--light-gray);
                         }
                     }

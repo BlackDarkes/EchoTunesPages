@@ -226,55 +226,128 @@ img {
           user-select: none;
 }
 
-.serchBar {
-  width: 80%;
-  min-width: 650px;
-  max-width: 800px;
+.mobileAsideBlock {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: var(--dark);
+  color: var(--white);
+  transform: translateX(-100%);
+  transition: 0.4s;
+  z-index: 100;
 }
-.serchBar__block .serch-block {
+.mobileAsideBlock__block .mobileAside-navigation {
   display: flex;
+  flex-direction: column;
+  position: relative;
+  row-gap: 55px;
+  padding: 145px 23px 50px 40px;
 }
-.serchBar__block .serch-block__input {
-  padding: 7px 24px;
-  width: 93%;
-  height: 40px;
-  border-radius: 10px 0 0 10px;
-  border: 0;
-  color: var(--black);
-  font-size: 18px;
+.mobileAsideBlock__block .mobileAside-navigation::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 90px);
+  width: 180px;
+  height: 1px;
+  background-color: var(--light-gray);
 }
-.serchBar__block .serch-block__input, .serchBar__block .serch-block__input:focus {
-  outline: 0;
-}
-.serchBar__block .serch-block__input::-moz-placeholder {
-  color: var(--black);
-}
-.serchBar__block .serch-block__input::placeholder {
-  color: var(--black);
-}
-.serchBar__block .serch-block__button {
+.mobileAsideBlock__block .mobileAside-navigation__button {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 50px;
-  background-color: var(--light-gray);
-  border-radius: 0 10px 10px 0;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  font-size: var(--font-text);
   transition: 0.4s;
 }
 @media (hover: hover) {
-  .serchBar__block .serch-block__button:hover {
-    background-color: var(--black);
+  .mobileAsideBlock__block .mobileAside-navigation__button:hover {
     color: var(--light-gray);
   }
 }
 @media (hover: none) {
-  .serchBar__block .serch-block__button:active {
-    background-color: var(--black);
+  .mobileAsideBlock__block .mobileAside-navigation__button:active {
     color: var(--light-gray);
   }
 }
-@media (max-width: 1280px) {
-  .serchBar {
-    display: none;
+.mobileAsideBlock__block .mobileAside-navigation .active {
+  position: relative;
+  color: var(--light-gray);
+}
+.mobileAsideBlock__block .mobileAside-navigation .active::before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: -10px;
+  width: 2px;
+  height: 100%;
+  background-color: var(--light-gray);
+}
+.mobileAsideBlock__block .mobileAside-playlist {
+  display: flex;
+  flex-direction: column;
+  row-gap: 50px;
+  padding: 50px 30px 0 40px;
+}
+.mobileAsideBlock__block .mobileAside-playlist__new {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+  font-size: 18px;
+  color: var(--white);
+  transition: 0.4s;
+}
+@media (hover: hover) {
+  .mobileAsideBlock__block .mobileAside-playlist__new:hover {
+    color: var(--light-gray);
   }
-}/*# sourceMappingURL=SerchPanel.css.map */
+}
+@media (hover: none) {
+  .mobileAsideBlock__block .mobileAside-playlist__new:active {
+    color: var(--light-gray);
+  }
+}
+.mobileAsideBlock__block .mobileAside-playlist .playlist-block {
+  display: flex;
+  flex-direction: column;
+  row-gap: 35px;
+  height: 30vh;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+.mobileAsideBlock__block .mobileAside-playlist .playlist-block::-webkit-scrollbar {
+  background-color: var(--gray);
+  width: 3px;
+}
+.mobileAsideBlock__block .mobileAside-playlist .playlist-block::-webkit-scrollbar-thumb {
+  background-color: var(--white);
+}
+.mobileAsideBlock__block .mobileAside-playlist .playlist-block__playlists {
+  width: 157px;
+  height: 24px;
+  transition: 0.4s;
+}
+@media (hover: hover) {
+  .mobileAsideBlock__block .mobileAside-playlist .playlist-block__playlists:hover {
+    color: var(--light-gray);
+  }
+}
+@media (hover: none) {
+  .mobileAsideBlock__block .mobileAside-playlist .playlist-block__playlists:active {
+    color: var(--light-gray);
+  }
+}
+.mobileAsideBlock__block .mobileAside-playlist .playlist-block__text {
+  width: 157px;
+  height: 24px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.active {
+  transform: translateX(0);
+}/*# sourceMappingURL=MobileAsideBlock.css.map */

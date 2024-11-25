@@ -2,7 +2,6 @@
 
 .headerMobile {
     display: none;
-    padding-left: 60px;
     color: var(--white);
 
     &__burger {
@@ -15,6 +14,7 @@
         width: 40px;
         height: 40px;
         color: var(--white);
+        z-index: 200;
         
         @include mobile() {
             left: 20px
@@ -22,8 +22,12 @@
     }
 
     &__title {
-        @include fluid-text(24, 30);
+         font-size: 24px;
         font-weight: 600;
+
+        @include mobile() {
+            font-size: 20px;
+        }
     }
 
     &-blocks {
@@ -34,5 +38,9 @@
     @include laptop() {
         display: flex;
         justify-content: space-between;
+    }
+
+    @include mobile() {
+        padding-left: 60px;
     }
 }

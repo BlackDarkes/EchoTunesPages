@@ -189,6 +189,14 @@ body::-webkit-scrollbar {
   width: 100vw;
 }
 
+input, textarea {
+  resize: none;
+  border: 0;
+}
+input:focus, textarea:focus {
+  outline: 0;
+}
+
 a {
   color: inherit;
   font-weight: 200;
@@ -210,6 +218,12 @@ button {
 
 p {
   font-weight: 200;
+}
+
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .asideBlock {
@@ -251,8 +265,15 @@ p {
   font-size: var(--font-text);
   transition: 0.4s;
 }
-.asideBlock__block .aside-navigation__button:is(:hover, :focus) {
-  color: var(--light-gray);
+@media (hover: hover) {
+  .asideBlock__block .aside-navigation__button:hover {
+    color: var(--light-gray);
+  }
+}
+@media (hover: none) {
+  .asideBlock__block .aside-navigation__button:active {
+    color: var(--light-gray);
+  }
 }
 .asideBlock__block .aside-navigation .active {
   position: relative;
@@ -288,8 +309,15 @@ p {
   color: var(--white);
   transition: 0.4s;
 }
-.asideBlock__block .aside-playlist__new:is(:hover, :focus) {
-  color: var(--light-gray);
+@media (hover: hover) {
+  .asideBlock__block .aside-playlist__new:hover {
+    color: var(--light-gray);
+  }
+}
+@media (hover: none) {
+  .asideBlock__block .aside-playlist__new:active {
+    color: var(--light-gray);
+  }
 }
 .asideBlock__block .aside-playlist .playlist-block {
   display: flex;
@@ -300,19 +328,26 @@ p {
   overflow-y: auto;
 }
 .asideBlock__block .aside-playlist .playlist-block::-webkit-scrollbar {
-  background-color: var(--white);
+  background-color: var(--gray);
   width: 3px;
 }
 .asideBlock__block .aside-playlist .playlist-block::-webkit-scrollbar-thumb {
-  background-color: var(--gray);
+  background-color: var(--white);
 }
 .asideBlock__block .aside-playlist .playlist-block__playlists {
   width: 157px;
   height: 24px;
   transition: 0.4s;
 }
-.asideBlock__block .aside-playlist .playlist-block__playlists:is(:hover, :focus) {
-  color: var(--light-gray);
+@media (hover: hover) {
+  .asideBlock__block .aside-playlist .playlist-block__playlists:hover {
+    color: var(--light-gray);
+  }
+}
+@media (hover: none) {
+  .asideBlock__block .aside-playlist .playlist-block__playlists:active {
+    color: var(--light-gray);
+  }
 }
 .asideBlock__block .aside-playlist .playlist-block__text {
   width: 157px;

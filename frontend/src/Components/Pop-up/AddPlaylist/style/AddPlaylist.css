@@ -226,55 +226,158 @@ img {
           user-select: none;
 }
 
-.serchBar {
-  width: 80%;
-  min-width: 650px;
-  max-width: 800px;
-}
-.serchBar__block .serch-block {
-  display: flex;
-}
-.serchBar__block .serch-block__input {
-  padding: 7px 24px;
-  width: 93%;
-  height: 40px;
-  border-radius: 10px 0 0 10px;
-  border: 0;
-  color: var(--black);
-  font-size: 18px;
-}
-.serchBar__block .serch-block__input, .serchBar__block .serch-block__input:focus {
-  outline: 0;
-}
-.serchBar__block .serch-block__input::-moz-placeholder {
-  color: var(--black);
-}
-.serchBar__block .serch-block__input::placeholder {
-  color: var(--black);
-}
-.serchBar__block .serch-block__button {
+.addPlaylist {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  background-color: var(--light-gray);
-  border-radius: 0 10px 10px 0;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: 0.4s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
+}
+.addPlaylist__block .add {
+  position: relative;
+  padding: 115px 40px 0;
+  height: 400px;
+  width: 42vw;
+  min-width: 390px;
+  background-color: var(--dark);
+  color: var(--black);
+  scale: 0;
+  transition: 0.4s;
+}
+.addPlaylist__block .add__close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  color: var(--white);
   transition: 0.4s;
 }
 @media (hover: hover) {
-  .serchBar__block .serch-block__button:hover {
-    background-color: var(--black);
+  .addPlaylist__block .add__close:hover {
     color: var(--light-gray);
   }
 }
 @media (hover: none) {
-  .serchBar__block .serch-block__button:active {
-    background-color: var(--black);
+  .addPlaylist__block .add__close:active {
     color: var(--light-gray);
   }
 }
-@media (max-width: 1280px) {
-  .serchBar {
-    display: none;
+.addPlaylist__block .add-textblock {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 400px;
+  min-width: 290px;
+}
+.addPlaylist__block .add-textblock__name {
+  padding: 7px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.4s;
+}
+.addPlaylist__block .add-textblock__name:focus {
+  outline: 1px solid var(--light-gray);
+}
+.addPlaylist__block .add-textblock__name::-moz-placeholder {
+  color: inherit;
+}
+.addPlaylist__block .add-textblock__name::placeholder {
+  color: inherit;
+}
+.addPlaylist__block .add-textblock__description {
+  padding: 5px 10px;
+  border-radius: 5px;
+  height: 80px;
+  font-size: 14px;
+  transition: 0.4s;
+}
+.addPlaylist__block .add-textblock__description:focus {
+  outline: 1px solid var(--light-gray);
+}
+.addPlaylist__block .add-textblock__description::-moz-placeholder {
+  color: inherit;
+}
+.addPlaylist__block .add-textblock__description::placeholder {
+  color: inherit;
+}
+.addPlaylist__block .add-textblock__enter {
+  margin-top: 15px;
+  border-radius: 7px;
+  padding: 5px 28px;
+  width: min(130px, 100%);
+  transition: 0.4s;
+  cursor: pointer;
+}
+@media (hover: hover) {
+  .addPlaylist__block .add-textblock__enter:hover {
+    background-color: var(--light-gray);
+    border-radius: 10px;
   }
-}/*# sourceMappingURL=SerchPanel.css.map */
+}
+@media (hover: none) {
+  .addPlaylist__block .add-textblock__enter:active {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+  }
+}
+.addPlaylist__block .add-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  width: 230px;
+  min-width: 180px;
+  background-color: var(--white);
+  cursor: pointer;
+  transition: 0.4s;
+}
+@media (hover: hover) {
+  .addPlaylist__block .add-download:hover {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+  }
+}
+@media (hover: none) {
+  .addPlaylist__block .add-download:active {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+  }
+}
+.addPlaylist__block .add-download .download-block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 35px;
+  cursor: inherit;
+}
+.addPlaylist__block .add-download .download-block__text {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.addPlaylist__block .add-download__file {
+  position: fixed;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.active {
+  opacity: 1;
+  pointer-events: painted;
+  -webkit-user-select: all;
+     -moz-user-select: all;
+          user-select: all;
+}
+
+.active .add {
+  scale: 1;
+}/*# sourceMappingURL=AddPlaylist.css.map */

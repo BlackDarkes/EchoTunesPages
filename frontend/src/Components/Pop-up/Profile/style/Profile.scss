@@ -11,12 +11,18 @@
     color: var(--light-gray);
     transform: translateX(100%);
     transition: 0.5s;
+    z-index: 300;
     
     &__close {
         position: absolute;
         top: 20px;
         right: 25px;
         color: var(--light-gray);
+        transition: 0.4s;
+
+        @include hover() {
+            color: var(--white);
+        }
     }
 
     &-block {
@@ -24,6 +30,14 @@
         flex-direction: column;
         row-gap: 30px;
         font-size: 18px;
+
+        &__button {
+            transition: 0.4s;
+
+            @include hover() {
+                color: var(--white);
+            }
+        }
     }
 }
 

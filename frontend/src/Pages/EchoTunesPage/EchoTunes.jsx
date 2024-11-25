@@ -16,7 +16,7 @@ const EchoTunes = () => {
                     <SerchBar/>
                     <ProfilUser/>
                 </header>
-                <HeaderMobile/>
+                <HeaderMobile home="aside-navigation__button active" library="aside-navigation__button"/>
                 <main className="musics">
                     <MusicBlock/>
                 </main>

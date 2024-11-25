@@ -189,6 +189,14 @@ body::-webkit-scrollbar {
   width: 100vw;
 }
 
+input, textarea {
+  resize: none;
+  border: 0;
+}
+input:focus, textarea:focus {
+  outline: 0;
+}
+
 a {
   color: inherit;
   font-weight: 200;
@@ -212,6 +220,12 @@ p {
   font-weight: 200;
 }
 
+img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 .popup {
   position: fixed;
   padding: 70px 10px 30px 50px;
@@ -223,18 +237,43 @@ p {
   color: var(--light-gray);
   transform: translateX(100%);
   transition: 0.5s;
+  z-index: 300;
 }
 .popup__close {
   position: absolute;
   top: 20px;
   right: 25px;
   color: var(--light-gray);
+  transition: 0.4s;
+}
+@media (hover: hover) {
+  .popup__close:hover {
+    color: var(--white);
+  }
+}
+@media (hover: none) {
+  .popup__close:active {
+    color: var(--white);
+  }
 }
 .popup-block {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
   font-size: 18px;
+}
+.popup-block__button {
+  transition: 0.4s;
+}
+@media (hover: hover) {
+  .popup-block__button:hover {
+    color: var(--white);
+  }
+}
+@media (hover: none) {
+  .popup-block__button:active {
+    color: var(--white);
+  }
 }
 
 .active {

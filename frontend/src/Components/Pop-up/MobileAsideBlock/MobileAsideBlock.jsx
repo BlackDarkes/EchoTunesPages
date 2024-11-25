@@ -1,43 +1,16 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./style/AsudeBlock.css";
-import Button from "../Blocks/Button/Button";
-import Home from "../AssetsBlocks/AsideBlock/Home";
-import Labrary from "../AssetsBlocks/AsideBlock/Labrary";
-import New from "../AssetsBlocks/AsideBlock/New";
-import AsideBlockMobile from "../Mobile-blocks/AsideBlockMobile/AsideBlockMobile";
-import AddPlaylist from "../Pop-up/AddPlaylist/AddPlaylist";
+import Button from "../../Blocks/Button/Button";
+import Labrary from "../../AssetsBlocks/AsideBlock/Labrary";
+import Home from "../../AssetsBlocks/AsideBlock/Home";
+import New from "../../AssetsBlocks/AsideBlock/New";
+import "./style/MobileAsideBlock.css";
 
-const AsideBlock = ({home, library}) => {
-    const [open, setOpen] = useState(false);
-
-    useEffect(() => {
-        document.addEventListener("click", (event) => {
-            const newPlaylist = event.target.closest(".aside-playlist__new");
-
-            if (newPlaylist) {
-                setOpen(!open);
-            };
-        });
-
-        return () => {
-            document.removeEventListener("click", (event) => {
-                const newPlaylist = event.target.closest(".aside-playlist__new");
-    
-                if (newPlaylist) {
-                    setOpen(!open);
-                };
-            });
-        }
-    }, [open])
-
-    return ( 
-        <>
-        <aside className="asideBlock">
-            <div className="asideBlock__block">
-                <div className="aside">
-                    <div className="aside-navigation">
-                        <h1 className="aside-navigation__title">EchoTunes</h1>
+const MobileAsideBlock = ({home, library, active}) => {
+    return (
+        <aside className={active ? "mobileAsideBlock active" : "mobileAsideBlock"}>
+            <div className="mobileAsideBlock__block">
+                <div className="mobileAside">
+                    <div className="mobileAside-navigation">
                         <Link className={[home].join(" ")}>
                             <Button image={<Home/>} text={"Главная"} />
                         </Link>
@@ -46,8 +19,8 @@ const AsideBlock = ({home, library}) => {
                         </Link>
                     </div>
 
-                    <div className="aside-playlist">
-                        <Button image={<New/>} text={"Новый"} classBlock={"aside-playlist__new"} />
+                    <div className="mobileAside-playlist">
+                        <Button image={<New/>} text={"Новый"} classBlock={"mobileAside-playlist__new"}/>
 
                         <section className="playlist-block">
                             <Link className="playlist-block__playlists" to={""}><p className="playlist-block__text">Созданный плейлист...</p></Link>
@@ -62,10 +35,7 @@ const AsideBlock = ({home, library}) => {
                 </div>
             </div>
         </aside>
-        <AddPlaylist open={open} setOpen={setOpen}/>
-        <AsideBlockMobile home="mobile__home active mobile__button" library="mobile__library mobile__button"/>
-        </>
     );
 }
  
-export default AsideBlock;
+export default MobileAsideBlock;

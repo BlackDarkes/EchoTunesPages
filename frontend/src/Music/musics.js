@@ -9,8 +9,8 @@ export const musics = [
     },
     {
         id: count++,
-        name: "iabloki-na-snegu",
-        author: "chernikovskaia-khata",
+        name: "Iabloki-na-snegu",
+        author: "Chernikovskaia-khata",
         music: require("./russian-doomer-chernikovskaia-khata-iabloki-na-snegu.mp3"),
     },
     {

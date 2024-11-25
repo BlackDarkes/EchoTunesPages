@@ -14,6 +14,7 @@ import RandomMusic from "../AssetsBlocks/MusicBar/NavigationMusic/RandomMusic";
 import NextMusic from "../AssetsBlocks/MusicBar/NavigationMusic/NextMusic";
 import RepeatMusic from "../AssetsBlocks/MusicBar/NavigationMusic/ReapeatMusic";
 import AddPlaylist from "../AssetsBlocks/MusicBar/Sound/AddPlaylist";
+import { MusicsContents } from "../../Contents/MusicsContents/MusicsContents";
 
 const MusicBar = () => {
     const [play, setPlay] = useState(false);
@@ -35,13 +36,12 @@ const MusicBar = () => {
             setCurrentTime(newTrack.currentTime);
         };
 
-        // Обработчик окончания трека
         const handleEnded = () => {
             nextTrack();
         };
 
         newTrack.addEventListener('timeupdate', updateTime);
-        newTrack.addEventListener('ended', handleEnded); // Добавляем обработчик
+        newTrack.addEventListener('ended', handleEnded);
 
         setTrack(newTrack);
 
@@ -49,9 +49,23 @@ const MusicBar = () => {
             newTrack.pause();
             newTrack.currentTime = 0;
             newTrack.removeEventListener('timeupdate', updateTime);
-            newTrack.removeEventListener('ended', handleEnded); // Убираем обработчик
+            newTrack.removeEventListener('ended', handleEnded);
         };
     }, [count]);
+
+    const enterKey = (event) => {
+        if (event.keyCode === 32) {
+            window.addEventListener("keydown", setPlay(!play))
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener("keydown", enterKey)
+
+        return () => {
+            document.removeEventListener("keydown", enterKey)
+        }
+    }, [play])
 
     useEffect(() => {
         if (track) {
@@ -69,13 +83,11 @@ const MusicBar = () => {
     const nextTrack = () => {
         setCount((prevIndex) => (prevIndex + 1) % musics.length);
         setCurrentTime(0);
-        // Не меняем состояние play здесь
     };
 
     const lastTrack = () => {
         setCount((prevIndex) => (prevIndex - 1 + musics.length) % musics.length);
         setCurrentTime(0);
-        // Не меняем состояние play здесь
     };
 
     const togglePlayPause = () => {

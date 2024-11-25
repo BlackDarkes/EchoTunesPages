@@ -4,8 +4,9 @@ import BurgerOpen from "../../AssetsBlocks/AsideBlock/Mobile/BurgerOpen";
 import ProfilUser from "../../ProfilUser/ProfilUser";
 import SerchMobile from "./Blocks/SerchMobile/SerchMobile";
 import "./style/HeaderMobile.css";
+import MobileAsideBlock from "../../Pop-up/MobileAsideBlock/MobileAsideBlock";
 
-const HeaderMobile = () => {
+const HeaderMobile = ({home, library}) => {
     const [open, setOpen] = useState(false)
 
     return (
@@ -13,6 +14,7 @@ const HeaderMobile = () => {
             <button type="button" className="headerMobile__burger" onClick={() => setOpen(!open)}>
                 {open ? <BurgerClose/> : <BurgerOpen/>}
             </button>
+            <MobileAsideBlock home={home} library={library} active={open}/>
             <h1 className="headerMobile__title">EchoTunes</h1>
             <div className="headerMobile-blocks">
                 <SerchMobile/>

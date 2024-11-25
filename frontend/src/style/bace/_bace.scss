@@ -13,10 +13,23 @@ body {
     width: 100vw;
 }
 
+input, textarea {
+    resize: none;
+    border: 0;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
 a {@include re-style-link();}
 
 button {@include re-style-button();}
 
 p {
     font-weight: 200;
+}
+
+img {
+    user-select: none;
 }
