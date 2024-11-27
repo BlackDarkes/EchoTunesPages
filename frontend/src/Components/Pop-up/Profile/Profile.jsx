@@ -9,15 +9,40 @@ import Settings from "./AsetsProfile/Settings";
 import Termofuse from "./AsetsProfile/Termsofuse";
 import Referents from "./AsetsProfile/Referens";
 import Feedback from "./AsetsProfile/Feedback";
+import { useEffect, useState } from "react";
+import AddMusic from "../AddMusic/AddMusic";
 
 const Profile = ({active, setActive}) => {
+    const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        document.addEventListener("click", (event) => {
+            const newMusic = event.target.closest(".downloadMusic");
+
+            if (newMusic) {
+                setOpen(!open);
+            };
+        });
+
+        return () => {
+            document.removeEventListener("click", (event) => {
+                const newMusic = event.target.closest(".downloadMusic");
+    
+                if (newMusic) {
+                    setOpen(!open);
+                };
+            });
+        }
+    }, [open])
+
     return (
+        <>
         <div className={active ? "active popup" : "popup"}>
             <button type="button" className="popup__close" onClick={() => setActive(!active)}><Close/></button>
             <div className="popup-block"> 
                 <Button image={<Login/>} text={"Войти/Регистрация"} classBlock="button popup-block__button"/>
                 <Button image={<Exit/>} text={"Выход"} classBlock="button popup-block__button"/>
-                <Button image={<Download/>} text={"Загрузка музыки"} classBlock="button popup-block__button"/>
+                <Button image={<Download/>} text={"Загрузка музыки"} classBlock="button popup-block__button downloadMusic"/>
                 <Button image={<History/>} text={"История"} classBlock="button popup-block__button"/>
                 <Button image={<Settings/>} text={"Настройки"} classBlock="button popup-block__button"/>
                 <Button image={<Termofuse/>} text={"Условия пользования"} classBlock="button popup-block__button"/>
@@ -25,6 +50,8 @@ const Profile = ({active, setActive}) => {
                 <Button image={<Feedback/>} text={"Оставить отзыв"} classBlock="button popup-block__button"/>
             </div>
         </div>
+        <AddMusic open={open} setOpen={setOpen}/>
+        </>
     );
 }
  

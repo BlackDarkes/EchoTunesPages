@@ -8,7 +8,7 @@ const AddPlaylist = ({open, setOpen}) => {
             <div className="addPlaylist__block">
                 <div className="add">
                     <button type="button" className="add__close" onClick={() => setOpen(false)}><BurgerClose/></button>
-                    <form action="" style={{display: "flex", justifyContent: "space-between"}}>
+                    <form action="" className="add-form">
                         <div className="add-textblock">
                             <input type="text" className="add-textblock__name" placeholder="Название плейлиста" maxLength={50} required/>
                             <textarea className="add-textblock__description" placeholder="Введите краткое описание" maxLength={140}/>
@@ -19,7 +19,7 @@ const AddPlaylist = ({open, setOpen}) => {
                                 <DownloadImage/>
                                 <p className="download-block__text">Загрузить картинку</p>
                             </label>
-                            <input type="file" name="download" id="download" className="add-download__file" accept=".mp3" required/>
+                            <input type="file" name="download" id="download" className="add-download__file" accept=".png, .jpg" required/>
                         </div>
                     </form>
                 </div>
