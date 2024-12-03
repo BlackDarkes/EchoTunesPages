@@ -18,7 +18,7 @@ import { MusicsContents } from "../../Contents/MusicsContents/MusicsContents";
 
 const MusicBar = () => {
     const [play, setPlay] = useState(false);
-    const [valueSound, setValueSound] = useState(0.05);
+    const [valueSound, setValueSound] = useState(0.30);
     const [count, setCount] = useState(0);
     const [track, setTrack] = useState(new Audio(musics[count].music));
     const [currentTime, setCurrentTime] = useState(0);
@@ -154,7 +154,7 @@ const MusicBar = () => {
                         </button>
                         <div className="sound">
                             <button type="button" className="sound__image" onClick={() => {
-                                valueSound >= 0.01 ? setValueSound(0) : setValueSound(0.03)
+                                valueSound >= 0.01 ? setValueSound(0) : setValueSound(0.30)
                             }}>
                                 {valueSound === 0 ? <NotSound/> : ""}
                                 {valueSound >= "0.01" && valueSound <= 0.14 ? <LowSound/> : ""}

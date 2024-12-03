@@ -9,8 +9,6 @@ import EchoTunes from './Pages/EchoTunesPage/EchoTunes';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <EchoTunes/>
-    </BrowserRouter>
+    <App/>
   </React.StrictMode>
 );

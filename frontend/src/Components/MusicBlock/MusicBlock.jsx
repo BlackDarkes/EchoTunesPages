@@ -4,7 +4,10 @@ import "./style/MusicBlock.css";
 import Music from "./Blocks/Music";
 import { musics } from "../../Music/musics";
 
-const MusicBlock = () => {const generateMusic = musics.map((elem, index) => {
+const reverseMusic = musics.reverse()
+
+const MusicBlock = () => {
+    const generateMusic = musics.map((elem, index) => {
         return <Music key={musics[index].id} musicName={musics[index].name} author={musics[index].author} isPlay={false}/>
     })
 
