@@ -1,8 +1,8 @@
-import MusicBar from "../../Components/MusicBar/MusicBar";
+import { Link } from "react-router-dom";
 
 const PlaylistMusic = () => {
     return (
-        <MusicBar/>
+        <Link to="/">Вернуться</Link>
     );
 }
  
