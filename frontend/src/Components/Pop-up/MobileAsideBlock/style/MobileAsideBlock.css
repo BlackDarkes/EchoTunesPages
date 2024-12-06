@@ -242,8 +242,8 @@ img {
   display: flex;
   flex-direction: column;
   position: relative;
-  row-gap: 55px;
-  padding: 145px 23px 50px 40px;
+  row-gap: 50px;
+  padding: 145px 23px 40px 50px;
 }
 .mobileAsideBlock__block .mobileAside-navigation::before {
   content: "";
@@ -285,11 +285,17 @@ img {
   height: 100%;
   background-color: var(--light-gray);
 }
+@media (max-width: 600px) {
+  .mobileAsideBlock__block .mobileAside-navigation {
+    row-gap: 40px;
+    padding: 100px 23px 40px 40px;
+  }
+}
 .mobileAsideBlock__block .mobileAside-playlist {
   display: flex;
   flex-direction: column;
-  row-gap: 50px;
-  padding: 50px 30px 0 40px;
+  row-gap: 40px;
+  padding: 40px 30px 0 40px;
 }
 .mobileAsideBlock__block .mobileAside-playlist__new {
   display: flex;
@@ -313,7 +319,7 @@ img {
 .mobileAsideBlock__block .mobileAside-playlist .playlist-block {
   display: flex;
   flex-direction: column;
-  row-gap: 35px;
+  row-gap: 25px;
   height: 30vh;
   flex-shrink: 0;
   overflow-y: auto;

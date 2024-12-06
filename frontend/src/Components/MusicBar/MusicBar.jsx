@@ -23,6 +23,26 @@ const MusicBar = () => {
     const [track, setTrack] = useState(new Audio(musics[count].music));
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [offset, setOffset] = useState(0);
+    const textRef = useRef(null);
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (textRef.current && containerRef.current) {
+                const textWidth = textRef.current.offsetWidth;
+
+                setOffset(prevOffset => {
+                    if (prevOffset <= -textWidth) {
+                        return 0; 
+                    }
+                    return prevOffset - 1;
+                });
+            }
+        }, 50);
+
+        return () => clearInterval(interval);
+    }, []);
 
     useEffect(() => {
         const newTrack = new Audio(musics[count].music);
@@ -125,10 +145,19 @@ const MusicBar = () => {
                 onChange={handleTimeChange}/>
             <div className="musicBar__block">
                 <div className="bar">
-                    <div className="bar-info">
-                        <p className="bar-info__time"><span className="start-time">{formatTime(currentTime)}</span> / <span className="full-time">{formatTime(duration)}</span></p>
-                        <p className="bar-info__name">{musics[count].name} / {musics[count].author}</p>
-                    </div>
+                <div className="bar-info">
+                <p className="bar-info__time">
+                    <span className="start-time">{formatTime(currentTime)}</span> / <span className="full-time">{formatTime(duration)}</span>
+                </p>
+                <div ref={containerRef} className="bar-info__name" style={{ overflow: 'hidden', whiteSpace: 'nowrap', position: 'relative', width: "250px" }}>
+                    <span ref={textRef} style={{ position: 'absolute', left: `${offset}px`, transition: 'left 0.1s linear' }}>
+                        {musics[count].name} / {musics[count].author} &nbsp; &nbsp;
+                    </span>
+                    <span style={{ position: 'absolute', left: `${offset + textRef.current?.offsetWidth}px`, transition: 'left 0.1s linear' }}>
+                        {musics[count].name} / {musics[count].author} &nbsp; &nbsp;
+                    </span>
+                </div>
+            </div>
                     <div className="bar-nav">
                         <button type="button" className="bar-nav__randomMusic">
                             <RandomMusic/>

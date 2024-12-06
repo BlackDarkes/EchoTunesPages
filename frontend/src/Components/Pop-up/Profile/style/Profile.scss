@@ -8,7 +8,7 @@
     width: min(100%, 415px);
     height: 550px;
     background-color: var(--black);
-    color: var(--light-gray);
+    color: var(--white);
     transform: translateX(100%);
     transition: 0.5s;
     z-index: 300;
@@ -17,11 +17,11 @@
         position: absolute;
         top: 20px;
         right: 25px;
-        color: var(--light-gray);
+        color: var(--white);
         transition: 0.4s;
 
         @include hover() {
-            color: var(--white);
+            color: var(--light-gray);
         }
     }
 
@@ -35,7 +35,7 @@
             transition: 0.4s;
 
             @include hover() {
-                color: var(--white);
+                color: var(--light-gray);
             }
         }
     }

@@ -234,7 +234,7 @@ img {
   width: min(100%, 415px);
   height: 550px;
   background-color: var(--black);
-  color: var(--light-gray);
+  color: var(--white);
   transform: translateX(100%);
   transition: 0.5s;
   z-index: 300;
@@ -243,17 +243,17 @@ img {
   position: absolute;
   top: 20px;
   right: 25px;
-  color: var(--light-gray);
+  color: var(--white);
   transition: 0.4s;
 }
 @media (hover: hover) {
   .popup__close:hover {
-    color: var(--white);
+    color: var(--light-gray);
   }
 }
 @media (hover: none) {
   .popup__close:active {
-    color: var(--white);
+    color: var(--light-gray);
   }
 }
 .popup-block {
@@ -267,12 +267,12 @@ img {
 }
 @media (hover: hover) {
   .popup-block__button:hover {
-    color: var(--white);
+    color: var(--light-gray);
   }
 }
 @media (hover: none) {
   .popup-block__button:active {
-    color: var(--white);
+    color: var(--light-gray);
   }
 }
 
