@@ -17,10 +17,9 @@ import AddPlaylist from "../AssetsBlocks/MusicBar/Sound/AddPlaylist";
 import { MusicsContents } from "../../Contents/MusicsContents/MusicsContents";
 
 const MusicBar = () => {
-    const [play, setPlay] = useState(false);
+    const {play, setPlay} = useContext(MusicsContents);
     const [valueSound, setValueSound] = useState(0.30);
-    const { index, setIndex } = useContext(MusicsContents)
-    const [count, setCount] = useState(0);
+    const { index, setIndex } = useContext(MusicsContents);
     const [track, setTrack] = useState(new Audio(musics[index].music));
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);

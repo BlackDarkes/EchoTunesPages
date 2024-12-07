@@ -51,6 +51,26 @@
                         }
                     }
 
+                    &__image {
+                        @include tabs() {
+                            display: none;
+                        }
+                    }
+
+                    &__playPause-tabs {
+                        color: var(--white);
+                        display: none;
+                        transition: 0.4s;
+
+                        @include hover() {
+                            color: var(--light-gray);
+                        }
+
+                        @include tabs() {
+                            display: block;
+                        }
+                    }
+
                     .block-text {
                         display: flex;
                         flex-direction: column;
