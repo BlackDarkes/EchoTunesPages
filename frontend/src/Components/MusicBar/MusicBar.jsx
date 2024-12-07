@@ -14,12 +14,14 @@ import RandomMusic from "../AssetsBlocks/MusicBar/NavigationMusic/RandomMusic";
 import NextMusic from "../AssetsBlocks/MusicBar/NavigationMusic/NextMusic";
 import RepeatMusic from "../AssetsBlocks/MusicBar/NavigationMusic/ReapeatMusic";
 import AddPlaylist from "../AssetsBlocks/MusicBar/Sound/AddPlaylist";
+import { MusicsContents } from "../../Contents/MusicsContents/MusicsContents";
 
 const MusicBar = () => {
     const [play, setPlay] = useState(false);
     const [valueSound, setValueSound] = useState(0.30);
+    const { index, setIndex } = useContext(MusicsContents)
     const [count, setCount] = useState(0);
-    const [track, setTrack] = useState(new Audio(musics[count].music));
+    const [track, setTrack] = useState(new Audio(musics[index].music));
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [offset, setOffset] = useState(0);
@@ -44,7 +46,7 @@ const MusicBar = () => {
     }, []);
 
     useEffect(() => {
-        const newTrack = new Audio(musics[count].music);
+        const newTrack = new Audio(musics[index].music);
         newTrack.volume = valueSound;
 
         newTrack.onloadedmetadata = () => {
@@ -70,7 +72,7 @@ const MusicBar = () => {
             newTrack.removeEventListener('timeupdate', updateTime);
             newTrack.removeEventListener('ended', handleEnded);
         };
-    }, [count]);
+    }, [index]);
 
     const enterKey = (event) => {
         if (event.keyCode === 32) {
@@ -100,12 +102,12 @@ const MusicBar = () => {
     }, [play, track, valueSound]);
 
     const nextTrack = () => {
-        setCount((prevIndex) => (prevIndex + 1) % musics.length);
+        setIndex((prevIndex) => (prevIndex + 1) % musics.length);
         setCurrentTime(0);
     };
 
     const lastTrack = () => {
-        setCount((prevIndex) => (prevIndex - 1 + musics.length) % musics.length);
+        setIndex((prevIndex) => (prevIndex - 1 + musics.length) % musics.length);
         setCurrentTime(0);
     };
 
@@ -150,10 +152,10 @@ const MusicBar = () => {
                 </p>
                 <div ref={containerRef} className="bar-info__name" style={{ overflow: 'hidden', whiteSpace: 'nowrap', position: 'relative', width: "250px" }}>
                     <span ref={textRef} style={{ position: 'absolute', left: `${offset}px`, transition: 'left 0.1s linear' }}>
-                        {musics[count].name} / {musics[count].author} &nbsp; &nbsp;
+                        {musics[index].name} / {musics[index].author} &nbsp; &nbsp;
                     </span>
                     <span style={{ position: 'absolute', left: `${offset + textRef.current?.offsetWidth}px`, transition: 'left 0.1s linear' }}>
-                        {musics[count].name} / {musics[count].author} &nbsp; &nbsp;
+                        {musics[index].name} / {musics[index].author} &nbsp; &nbsp;
                     </span>
                 </div>
             </div>

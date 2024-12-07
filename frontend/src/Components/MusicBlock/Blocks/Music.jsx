@@ -13,7 +13,7 @@ const Music = ({ musicName, author, id }) => {
 
     const togglePlay = () => {
         if (isPlaying) {
-            setIndex(0);
+            setIndex(id);
         } else {
             setIndex(id);
             console.log(id); 
