@@ -1,4 +1,5 @@
 import AsideBlock from "../../Components/AsideBlock/AsideBlock";
+import AsideBlockMobile from "../../Components/Mobile-blocks/AsideBlockMobile/AsideBlockMobile";
 import HeaderMobile from "../../Components/Mobile-blocks/HeaderMobile/HeaderMobile";
 import MusicBlock from "../../Components/MusicBlock/MusicBlock";
 import ProfilUser from "../../Components/ProfilUser/ProfilUser";
@@ -9,6 +10,7 @@ const EchoTunes = () => {
     return (
         <div className="echoTunes">
             <AsideBlock home="aside-navigation__button active" library="aside-navigation__button"/>
+            <AsideBlockMobile home="mobile__home active mobile__button" library="mobile__library mobile__button"/>
             <section className="echoTunes__blocks">
                 <header className="header-block">
                     <SerchBar/>

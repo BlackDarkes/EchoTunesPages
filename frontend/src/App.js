@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import PlaylistPage from "./Pages/PlayListPage/Playlist";
 import PlaylistMusic from "./Pages/PlaylistMusic/PlaylistMusic";
 import MusicBar from "./Components/MusicBar/MusicBar";
+import MusicProvider from "./Contents/MusicsContents/MusicsContents"; // Импортируйте ваш провайдер
 
 const router = createBrowserRouter([
   {
@@ -23,10 +24,12 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className="App">
-      <RouterProvider router={router}/>
-      <MusicBar/>
-    </div>
+    <MusicProvider>
+      <div className="App">
+        <RouterProvider router={router}/>
+        <MusicBar/>
+      </div>
+    </MusicProvider>
   );
 }
 

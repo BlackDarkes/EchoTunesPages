@@ -5,7 +5,6 @@ import Button from "../Blocks/Button/Button";
 import Home from "../AssetsBlocks/AsideBlock/Home";
 import Labrary from "../AssetsBlocks/AsideBlock/Labrary";
 import New from "../AssetsBlocks/AsideBlock/New";
-import AsideBlockMobile from "../Mobile-blocks/AsideBlockMobile/AsideBlockMobile";
 import AddPlaylist from "../Pop-up/AddPlaylist/AddPlaylist";
 
 const AsideBlock = ({home, library}) => {
@@ -63,7 +62,7 @@ const AsideBlock = ({home, library}) => {
             </div>
         </aside>
         <AddPlaylist open={open} setOpen={setOpen}/>
-        <AsideBlockMobile home="mobile__home active mobile__button" library="mobile__library mobile__button"/>
+
         </>
     );
 }

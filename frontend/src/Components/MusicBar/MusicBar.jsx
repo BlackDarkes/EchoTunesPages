@@ -14,7 +14,6 @@ import RandomMusic from "../AssetsBlocks/MusicBar/NavigationMusic/RandomMusic";
 import NextMusic from "../AssetsBlocks/MusicBar/NavigationMusic/NextMusic";
 import RepeatMusic from "../AssetsBlocks/MusicBar/NavigationMusic/ReapeatMusic";
 import AddPlaylist from "../AssetsBlocks/MusicBar/Sound/AddPlaylist";
-import { MusicsContents } from "../../Contents/MusicsContents/MusicsContents";
 
 const MusicBar = () => {
     const [play, setPlay] = useState(false);
