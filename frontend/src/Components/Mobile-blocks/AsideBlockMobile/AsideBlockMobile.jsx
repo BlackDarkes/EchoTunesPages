@@ -9,7 +9,7 @@ const AsideBlockMobile = ({home, library}) => {
             <Link to="/" className={[home].join(" ")}>
                 <HomeMobile/>
             </Link>
-            <Link to="/playlists" className={[library].join(" ")}>
+            <Link to="/EchoTunesPages/playlists" className={[library].join(" ")}>
                 <LabraryMobile/>
             </Link>
         </div>

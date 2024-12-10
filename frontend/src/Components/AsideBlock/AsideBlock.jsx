@@ -40,7 +40,7 @@ const AsideBlock = ({home, library}) => {
                         <Link className={[home].join(" ")} to="/">
                             <Button image={<Home/>} text={"Главная"} />
                         </Link>
-                        <Link className={[library].join(" ")} to="/playlists">
+                        <Link className={[library].join(" ")} to="/EchoTunesPages/playlists">
                             <Button image={<Labrary/>} text={"Библиотека"}/>
                         </Link>
                     </div>
@@ -49,13 +49,13 @@ const AsideBlock = ({home, library}) => {
                         <Button image={<New/>} text={"Новый"} classBlock={"aside-playlist__new"} />
 
                         <section className="playlist-block">
-                        <Link className="playlist-block__playlists" to="/playlists/music/1"><p className="playlist-block__text">Созданный плейлист...</p></Link>
-                            <Link className="playlist-block__playlists" to="/playlists/music/2"><p className="playlist-block__text">Созданный плейлист...</p></Link>
-                            <Link className="playlist-block__playlists" to="/playlists/music/3"><p className="playlist-block__text">Созданный плейлист...</p></Link>
-                            <Link className="playlist-block__playlists" to="/playlists/music/4"><p className="playlist-block__text">Созданный плейлист...</p></Link>
-                            <Link className="playlist-block__playlists" to="/playlists/music/5"><p className="playlist-block__text">Созданный плейлист...</p></Link>
-                            <Link className="playlist-block__playlists" to="/playlists/music/6"><p className="playlist-block__text">Созданный плейлист...</p></Link>
-                            <Link className="playlist-block__playlists" to="/playlists/music/7"><p className="playlist-block__text">Созданный плейлист...</p></Link>
+                        <Link className="playlist-block__playlists" to="/EchoTunesPages/playlists/music/:number"><p className="playlist-block__text">Созданный плейлист...</p></Link>
+                        <Link className="playlist-block__playlists" to="/EchoTunesPages/playlists/music/:number"><p className="playlist-block__text">Созданный плейлист...</p></Link>
+                        <Link className="playlist-block__playlists" to="/EchoTunesPages/playlists/music/:number"><p className="playlist-block__text">Созданный плейлист...</p></Link>
+                        <Link className="playlist-block__playlists" to="/EchoTunesPages/playlists/music/:number"><p className="playlist-block__text">Созданный плейлист...</p></Link>
+                        <Link className="playlist-block__playlists" to="/EchoTunesPages/playlists/music/:number"><p className="playlist-block__text">Созданный плейлист...</p></Link>
+                        <Link className="playlist-block__playlists" to="/EchoTunesPages/playlists/music/:number"><p className="playlist-block__text">Созданный плейлист...</p></Link>
+                        <Link className="playlist-block__playlists" to="/EchoTunesPages/playlists/music/:number"><p className="playlist-block__text">Созданный плейлист...</p></Link>
                         </section>
                     </div>
                 </div>

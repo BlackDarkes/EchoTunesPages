@@ -6,6 +6,7 @@ import PlaylistPage from "./Pages/PlayListPage/Playlist";
 import PlaylistMusic from "./Pages/PlaylistMusic/PlaylistMusic";
 import MusicBar from "./Components/MusicBar/MusicBar";
 import MusicProvider from "./Contents/MusicsContents/MusicsContents"; // Импортируйте ваш провайдер
+import PageNotFound from "./Pages/PageNotFound/PageNotFoun";
 
 const router = createBrowserRouter([
   {
@@ -13,14 +14,18 @@ const router = createBrowserRouter([
     element: <EchoTunes/>
   },
   {
-    path: "/playlists",
+    path: "/EchoTunesPages/playlists",
     element: <PlaylistPage/>
   },
   {
-    path: "/playlists/music/:number",
+    path: "/EchoTunesPages/playlists/music/:number", // Убедитесь, что этот путь правильный
     element: <PlaylistMusic/>
+  },
+  {
+    path: "*", // Этот маршрут должен быть последним
+    element: <PageNotFound/> 
   }
-]);
+], { basename: "/EchoTunesPages" });
 
 function App() {
   return (
