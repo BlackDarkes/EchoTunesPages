@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/EchoTunesPages/static/css/main.4645257a.css",
-    "main.js": "/EchoTunesPages/static/js/main.412c62d5.js",
+    "main.js": "/EchoTunesPages/static/js/main.b9571dcd.js",
     "static/media/tk-from-film-a-moment.mp3": "/EchoTunesPages/static/media/tk-from-film-a-moment.dd6bd443b8238daadd37.mp3",
     "static/media/queen-radio-ga-ga.mp3": "/EchoTunesPages/static/media/queen-radio-ga-ga.a23bb6bb0630afcbe177.mp3",
     "static/media/tk from signal.mp3": "/EchoTunesPages/static/media/tk from signal.88615efa788fe64a1b68.mp3",
@@ -15,10 +15,10 @@
     "static/media/КартинкаМузыки.svg": "/EchoTunesPages/static/media/КартинкаМузыки.538134e90356f13285bbd3f18ff6a9bd.svg",
     "index.html": "/EchoTunesPages/index.html",
     "main.4645257a.css.map": "/EchoTunesPages/static/css/main.4645257a.css.map",
-    "main.412c62d5.js.map": "/EchoTunesPages/static/js/main.412c62d5.js.map"
+    "main.b9571dcd.js.map": "/EchoTunesPages/static/js/main.b9571dcd.js.map"
   },
   "entrypoints": [
     "static/css/main.4645257a.css",
-    "static/js/main.412c62d5.js"
+    "static/js/main.b9571dcd.js"
   ]
 }
